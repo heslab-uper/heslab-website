@@ -266,3 +266,36 @@ details.member-group .pub-list { margin-top: 8px; }
 @media (max-width: 480px) {
   .motto { font-size: 1.05rem; gap: 8px; }
 }
+
+/* ---------------- Navigasi dalam halaman (anchor) ---------------- */
+.section-nav {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 14px 0 26px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.section-nav a {
+  font-family: var(--font-mono); font-size: 0.8rem;
+  padding: 5px 12px; border: 1px solid var(--river-200);
+  border-radius: var(--radius); color: var(--river-700);
+}
+.section-nav a:hover {
+  background: var(--river-100); text-decoration: none;
+}
+
+/* Jarak antar-bagian pada halaman gabungan (Tentang, Riset) */
+main section + section { margin-top: 44px; }
+main section > h2:first-child { margin-top: 0; }
+
+/* Sub-judul di dalam bagian (mis. kelompok mitra) */
+h3.sub {
+  font-family: var(--font-display); font-size: 1.08rem;
+  color: var(--ink-900); margin: 26px 0 10px;
+}
+
+/* Visi & misi */
+.visi {
+  border-left: 3px solid var(--wave-600); padding-left: 16px;
+  font-size: 1.02rem; color: var(--ink-700); max-width: 68ch;
+}
+.misi { max-width: 68ch; padding-left: 20px; }
+.misi li { margin-bottom: 8px; }
