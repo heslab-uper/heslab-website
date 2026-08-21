@@ -1,0 +1,239 @@
+/* ==================================================================
+   HESLab Website — style.css
+   Sistem warna & tipografi MENGIKUTI HESLab Portal:
+   - Skala "river" berbasis biru resmi Universitas Pertamina (#0077C0)
+   - Masthead gelap river-900, radius kecil 3px, font IBM Plex
+   - Logo: assets/img/uper-lambang.png (file yang sama dengan portal)
+   ================================================================== */
+
+:root {
+  /* --- Palet river (identik dengan heslab-portal) --- */
+  --river-900: #003F66;   /* masthead */
+  --river-800: #00558A;
+  --river-700: #0077C0;   /* PRIMARY — biru resmi UPer */
+  --river-600: #008EE6;   /* hover & elemen non-teks */
+  --river-500: #1AA8FF;   /* aksen, garis, ikon */
+  --river-200: #A8DEFF;   /* pinggir kartu */
+  --river-100: #E5F5FF;   /* latar tint pucat */
+
+  --uper-green: #C1D544;  /* hijau daun UPer — aksen institusional */
+  --wave-600: #00A5C4;    /* motif ombak/hidrograf, bukan teks */
+
+  --ink-900: #0E1B24;
+  --ink-700: #1E3542;
+  --ink-500: #4A6472;
+  --muted:   #6E848F;
+  --paper:   #F7FAFB;
+  --surface: #ffffff;
+  --line:    #D7E1E4;
+  --line-soft: #E7EEF0;
+
+  --radius: 3px;
+  --maxw: 1180px;
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-700);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+a { color: var(--river-700); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--river-600); }
+a:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
+
+/* ---------------- Masthead ---------------- */
+.site-header { background: var(--river-900); color: #DCE9EE; }
+.header-inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 12px; padding: 16px 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; color: inherit; }
+.brand:hover { text-decoration: none; }
+.brand-logo { height: 40px; width: auto; display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.45rem; letter-spacing: 0.02em; color: #fff;
+}
+.brand-sub {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  color: #70BCEB; letter-spacing: 0.02em;
+}
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
+.site-nav a {
+  color: #A4CFEA; padding: 7px 12px; border-radius: var(--radius);
+  font-size: 0.92rem; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: #fff; text-decoration: none; }
+.site-nav a.active { color: #fff; border-bottom-color: var(--river-500); }
+.site-nav .portal-link {
+  margin-left: 10px; font-family: var(--font-mono); font-size: 0.8rem;
+  color: #91CAED; border: 1px solid #08639B; padding: 6px 10px;
+}
+.site-nav .portal-link:hover { border-color: var(--river-500); color: #fff; }
+
+/* Garis hidrograf — motif air, memakai --wave-600 seperti portal */
+.hydrograph { display: block; width: 100%; height: 26px; background: var(--river-900); }
+
+/* ---------------- Struktur konten ---------------- */
+main { padding: 36px 20px 56px; min-height: 55vh; }
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--ink-900); line-height: 1.25; }
+h1 { font-size: 2rem; margin: 0 0 6px; }
+h2 { font-size: 1.4rem; margin: 2.2em 0 0.6em; }
+
+.eyebrow {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--river-700); margin-bottom: 4px;
+}
+.lead { color: var(--ink-500); max-width: 66ch; margin-top: 0; }
+
+/* ---------------- Kartu ---------------- */
+.card-grid {
+  display: grid; gap: 14px; margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.card {
+  background: var(--surface); border: 1px solid var(--river-200);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+.card .meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); margin-bottom: 8px; }
+.card p { margin: 0; font-size: 0.92rem; }
+.card .doclink {
+  display: inline-block; margin-top: 10px; font-family: var(--font-mono);
+  font-size: 0.78rem; border: 1px solid var(--river-200);
+  border-radius: var(--radius); padding: 4px 10px;
+}
+
+.badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  font-family: var(--font-mono); padding: 2px 10px;
+  border-radius: var(--radius); background: var(--river-100); color: var(--river-800);
+}
+.badge.green { background: #F3F7DC; color: #5A6614; }
+
+/* ---------------- Grup anggota (collapsible) ---------------- */
+details.member-group {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); margin-top: 14px;
+}
+details.member-group > summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 18px; font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 600; color: var(--ink-900);
+  border-left: 4px solid var(--river-700);
+}
+details.member-group > summary::-webkit-details-marker { display: none; }
+details.member-group > summary .count {
+  font-family: var(--font-mono); font-size: 0.76rem; font-weight: 400;
+  color: var(--muted);
+}
+details.member-group > summary::after {
+  content: "▸"; color: var(--river-700); margin-left: 10px;
+  transition: transform 0.15s ease;
+}
+details.member-group[open] > summary::after { transform: rotate(90deg); }
+details.member-group .group-body { padding: 4px 18px 18px; }
+details.member-group .card-grid { margin-top: 8px; }
+
+/* ---------------- Daftar publikasi ---------------- */
+.pub-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.pub-list li {
+  background: var(--surface); border: 1px solid var(--line);
+  border-left: 3px solid var(--river-500);
+  border-radius: var(--radius); padding: 13px 18px; margin-bottom: 10px;
+}
+.pub-year {
+  font-family: var(--font-mono); font-weight: 600;
+  color: var(--river-700); margin-right: 10px;
+}
+.pub-title { font-weight: 600; }
+.pub-src { color: var(--muted); font-size: 0.88rem; }
+
+/* ---------------- Statistik beranda ---------------- */
+.stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.stat {
+  flex: 1 1 150px; background: var(--surface);
+  border: 1px solid var(--river-200); border-top: 3px solid var(--river-700);
+  border-radius: var(--radius); padding: 12px 16px;
+}
+.stat .num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--river-800); }
+.stat .label { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); }
+
+/* ---------------- Tabel ---------------- */
+table.data { width: 100%; border-collapse: collapse; margin-top: 16px; background: var(--surface); }
+table.data th, table.data td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; font-size: 0.9rem; }
+table.data th { background: var(--river-100); font-family: var(--font-display); font-weight: 600; color: var(--ink-900); }
+.note { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
+
+/* ---------------- Footer ---------------- */
+.site-footer {
+  background: var(--river-900); color: #A4CFEA;
+  margin-top: 40px; font-size: 0.88rem;
+}
+.footer-inner {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  gap: 20px; padding: 28px 20px;
+}
+.footer-title { font-family: var(--font-display); font-weight: 600; color: #fff; margin-bottom: 6px; }
+.footer-line { margin-top: 2px; }
+.site-footer a { color: #91CAED; }
+.footer-meta { text-align: right; font-family: var(--font-mono); font-size: 0.78rem; }
+
+@media (max-width: 640px) {
+  .footer-meta { text-align: left; }
+  h1 { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------------- Aksen kartu (garis atas teal, seperti referensi) --------- */
+.card { border-top: 3px solid var(--wave-600); }
+
+/* ---------------- Metadata dataset & tombol unduh ---------------- */
+.dl-meta {
+  font-family: var(--font-mono); font-size: 0.78rem;
+  color: var(--river-700); margin: 12px 0 12px; line-height: 1.8;
+}
+.dl-meta .k { color: var(--ink-500); }
+.btn-cta {
+  display: inline-block; background: #E8A33D; color: #3A2A08;
+  font-weight: 600; font-size: 0.88rem; padding: 8px 16px;
+  border-radius: var(--radius); border: 1px solid #C9862B;
+}
+.btn-cta:hover { background: #F0B355; color: #3A2A08; text-decoration: none; }
+.soon {
+  display: inline-block; font-family: var(--font-mono);
+  font-size: 0.78rem; color: var(--muted);
+  border: 1px dashed var(--line); border-radius: var(--radius);
+  padding: 6px 12px;
+}
+.backlink { margin: 0 0 10px; font-family: var(--font-mono); font-size: 0.82rem; }
+
+/* ---------------- Kolaborasi ---------------- */
+.card .meta.periode { color: var(--river-700); margin-top: 10px; margin-bottom: 0; }
+
+/* ---------------- Kontak ---------------- */
+.contact-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.map-embed {
+  width: 100%; height: 380px; border: 1px solid var(--line);
+  border-radius: var(--radius); display: block; margin-top: 8px;
+}
+
+/* Publikasi di dalam grup buka-tutup */
+details.member-group .pub-list { margin-top: 8px; }
