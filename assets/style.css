@@ -237,3 +237,18 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 
 /* Publikasi di dalam grup buka-tutup */
 details.member-group .pub-list { margin-top: 8px; }
+
+/* ---------------- Blok Sitasi & Pengolahan Data ---------------- */
+.sitasi-box {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px 26px; margin-top: 32px;
+}
+.sitasi-box h2 { margin-top: 0; }
+.sitasi-box .lead { font-size: 0.9rem; margin-bottom: 18px; }
+.sitasi-item { margin-bottom: 18px; }
+.sitasi-item .meta { margin-bottom: 8px; }
+.sitasi-teks {
+  margin: 0; font-size: 0.92rem; line-height: 1.6;
+  color: var(--ink-700); word-break: break-word;
+}
+.sitasi-box .tool-card { margin-top: 4px; }
