@@ -255,18 +255,14 @@ details.member-group .pub-list { margin-top: 8px; }
 
 /* ---------------- Motto laboratorium (Beranda) ---------------- */
 .motto {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
-  margin: 10px 0 18px; padding-left: 14px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+  margin: 14px 0 20px; padding: 10px 0 10px 16px;
   border-left: 3px solid var(--wave-600);
-  font-family: var(--font-display); font-weight: 600;
-  font-size: 1.15rem; color: var(--river-800);
-  letter-spacing: 0.01em;
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 600;
+  color: var(--river-800); letter-spacing: 0.01em;
 }
-.motto span + span::before {
-  content: "/"; color: var(--wave-600); font-weight: 400;
-  margin-right: 14px; opacity: 0.7;
-}
+.motto-sep { color: var(--wave-600); font-weight: 400; }
 @media (max-width: 480px) {
-  .motto { font-size: 1rem; gap: 10px; }
-  .motto span + span::before { margin-right: 10px; }
+  .motto { font-size: 1.05rem; gap: 8px; }
 }
