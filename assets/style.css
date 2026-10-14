@@ -52,6 +52,15 @@ a { color: var(--river-700); text-decoration: none; }
 a:hover { text-decoration: underline; color: var(--river-600); }
 a:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 
+/* Tautan "Langsung ke konten": tersembunyi, muncul saat difokus lewat Tab */
+.skip-link {
+  position: absolute; left: 8px; top: -48px; z-index: 10;
+  background: #fff; color: var(--river-900); padding: 8px 12px;
+  border-radius: var(--radius); font-weight: 600;
+}
+.skip-link:focus { top: 8px; }
+main:focus { outline: none; }
+
 /* ---------------- Masthead ---------------- */
 .site-header { background: var(--river-900); color: #DCE9EE; }
 .header-inner {
@@ -88,8 +97,10 @@ a:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 
 /* ---------------- Struktur konten ---------------- */
 main { padding: 36px 20px 56px; min-height: 55vh; }
+/* URL atau kata sangat panjang dipatahkan agar halaman tidak melebar di ponsel */
+main p, main li, main dd { overflow-wrap: anywhere; }
 
-h1, h2, h3 { font-family: var(--font-display); color: var(--ink-900); line-height: 1.25; }
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink-900); line-height: 1.25; }
 h1 { font-size: 2rem; margin: 0 0 6px; }
 h2 { font-size: 1.4rem; margin: 2.2em 0 0.6em; }
 
@@ -109,7 +120,10 @@ h2 { font-size: 1.4rem; margin: 2.2em 0 0.6em; }
   background: var(--surface); border: 1px solid var(--river-200);
   border-radius: var(--radius); padding: 16px 18px;
 }
-.card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+/* Judul kartu: level heading mengikuti struktur halaman (h2/h3/h4),
+   tampilannya tetap sama. */
+.card h2, .card h3, .card h4 { margin: 0 0 6px; font-size: 1.02rem; }
+.card .links { display: flex; flex-wrap: wrap; gap: 6px; }
 .card .meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); margin-bottom: 8px; }
 .card p { margin: 0; font-size: 0.92rem; }
 .card .doclink {
@@ -149,6 +163,30 @@ details.member-group > summary::after {
 details.member-group[open] > summary::after { transform: rotate(90deg); }
 details.member-group .group-body { padding: 4px 18px 18px; }
 details.member-group .card-grid { margin-top: 8px; }
+
+/* ---------------- Kartu anggota: foto + tautan profil ---------------- */
+.member-card { display: flex; align-items: flex-start; gap: 14px; }
+.member-body { min-width: 0; flex: 1; }
+.avatar {
+  flex: 0 0 88px; width: 88px; height: 88px; border-radius: 50%;
+  object-fit: cover; display: block; background: var(--river-100);
+  border: 2px solid var(--river-200);
+}
+/* Pengganti foto: inisial nama di lingkaran berwarna palet river */
+.avatar-initials {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.6rem;
+  color: var(--river-800); letter-spacing: 0.02em;
+}
+.member-card .doclink { margin-top: 8px; }
+
+/* ---------------- Kartu kegiatan: gambar sampul ---------------- */
+/* Selebar kartu (menembus padding 16px 18px), di bawah garis atas teal */
+.card-cover {
+  display: block; width: calc(100% + 36px); max-width: none;
+  margin: -16px -18px 12px; aspect-ratio: 16 / 9; object-fit: cover;
+  background: var(--river-100);
+}
 
 /* ---------------- Daftar publikasi ---------------- */
 .pub-list { list-style: none; padding: 0; margin: 20px 0 0; }
