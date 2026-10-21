@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutupan lahan Sentinel-2 2024 · HESLab</title>
+<meta name="description" content="Peta tutupan lahan 2024 Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara dari Esri/Impact Observatory: kelas, kegunaan dalam hidrologi, dan atribusi.">
+<link rel="canonical" href="https://heslab-uper.com/data/gis/landcover-sentinel2/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HESLab · Hydro-Environmental Systems Laboratory">
+<meta property="og:title" content="Tutupan lahan Sentinel-2 2024 · HESLab">
+<meta property="og:description" content="Peta tutupan lahan 2024 Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara dari Esri/Impact Observatory: kelas, kegunaan dalam hidrologi, dan atribusi.">
+<meta property="og:url" content="https://heslab-uper.com/data/gis/landcover-sentinel2/">
+<meta property="og:image" content="https://heslab-uper.com/assets/img/uper-lambang.png">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-10-21">
+<link rel="icon" href="../../../assets/img/uper-lambang.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip-link" href="#konten">Langsung ke konten</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../../index.html">
+      <img class="brand-logo" src="../../../assets/img/uper-lambang.png" alt="Lambang Universitas Pertamina">
+      <span class="brand-text">
+        <span class="brand-name">HESLab</span>
+        <span class="brand-sub">Hydro-Environmental Systems Laboratory</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="../../../tentang/index.html">Tentang</a>
+      <a href="../../../riset/index.html">Riset</a>
+      <a href="../../../artikel/index.html">Artikel</a>
+      <a href="../../../publikasi/index.html">Publikasi</a>
+      <a href="../../../data/index.html" class="active" aria-current="page">Data</a>
+      <a href="../../../kegiatan/index.html">Kegiatan</a>
+      <a href="../../../kontak/index.html">Kontak</a>
+      <a class="portal-link" href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal ↗</a>
+    </nav>
+  </div>
+  <!-- Garis hidrograf: motif air, satu keluarga dengan motif ombak portal -->
+  <svg class="hydrograph" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,22 L120,22 L180,20 L260,8 L310,3 L360,10 L430,18 L560,21 L640,14 L700,6 L760,12 L860,20 L1000,22 L1200,22"
+          fill="none" stroke="var(--wave-600)" stroke-width="2.5"/>
+  </svg>
+</header>
+
+<main class="wrap" id="konten" tabindex="-1">
+<p class="backlink"><a href="../index.html">← Data GIS</a></p>
+<div class="eyebrow">Data · Data GIS</div>
+<h1>Tutupan lahan Sentinel-2 2024</h1>
+<p class="lead">Peta tutupan lahan 2024 Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara dari Esri/Impact Observatory: kelas, kegunaan dalam hidrologi, dan atribusi.</p>
+<article class="artikel-isi">
+<p>Data tutupan lahan ini menggambarkan jenis permukaan lahan di Sumatera,
+Kalimantan, Jawa–Bali, dan Nusa Tenggara pada tahun 2024: hutan, lahan
+pertanian, permukiman, badan air, dan seterusnya. HESLab mengolahnya dari peta tutupan lahan global berbasis
+citra satelit Sentinel-2 yang diterbitkan Esri bersama Impact Observatory,
+lalu menyediakannya dalam format GeoPackage agar mudah dipakai di QGIS,
+ArcGIS, atau Python.</p>
+<h2>Ringkasan data</h2>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Ciri</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sumber</td>
+<td>Esri / Impact Observatory, peta tutupan lahan tahunan dari citra Sentinel-2 (<a href="https://livingatlas.arcgis.com/landcoverexplorer/" rel="noopener" target="_blank">Land Cover Explorer</a>)</td>
+</tr>
+<tr>
+<td>Tahun</td>
+<td>2024</td>
+</tr>
+<tr>
+<td>Resolusi sumber</td>
+<td>10 m</td>
+</tr>
+<tr>
+<td>Cakupan</td>
+<td>Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>GeoPackage (.gpkg)</td>
+</tr>
+<tr>
+<td>Lisensi sumber</td>
+<td>Creative Commons Attribution 4.0 (CC BY 4.0)</td>
+</tr>
+<tr>
+<td>Pengolahan HESLab</td>
+<td>raster diubah menjadi poligon dan digabung per kelas (satu MultiPolygon per kelas); dibagi menjadi empat berkas: Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara</td>
+</tr>
+<tr>
+<td>Sistem koordinat</td>
+<td>WGS 84 geografis (EPSG:4326)</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Kelas tutupan lahan</h2>
+<p>Seri peta Esri/Impact Observatory memakai sembilan kelas dengan kode yang
+sama untuk semua tahun 2017–2025, termasuk data 2024 yang dipakai di sini
+(katalog Esri Living Atlas). Di berkas HESLab, kode kelas ada di kolom
+<code>gridcode</code> dan nama kelasnya di kolom <code>LU</code>. Nama di kolom <code>LU</code> sedikit
+berbeda dari nama resmi Esri:</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Kode (<code>gridcode</code>)</th>
+<th>Nama di kolom <code>LU</code></th>
+<th>Nama resmi Esri</th>
+<th>Padanan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Water</td>
+<td>Water</td>
+<td>badan air</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tree</td>
+<td>Trees</td>
+<td>pepohonan / hutan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Flooded Vegetation</td>
+<td>Flooded vegetation</td>
+<td>vegetasi tergenang</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Crop</td>
+<td>Crops</td>
+<td>lahan pertanian</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Built-up</td>
+<td>Built area</td>
+<td>lahan terbangun</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Bareland</td>
+<td>Bare ground</td>
+<td>lahan terbuka</td>
+</tr>
+<tr>
+<td>9</td>
+<td>—</td>
+<td>Snow/ice</td>
+<td>salju / es</td>
+</tr>
+<tr>
+<td>10</td>
+<td>—</td>
+<td>Clouds</td>
+<td>awan</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Grass</td>
+<td>Rangeland</td>
+<td>padang rumput / semak</td>
+</tr>
+</tbody>
+</table></div>
+<p>Berkas HESLab hanya memuat tujuh kelas; salju/es dan awan tidak muncul.
+Kode 3, 6, dan 12 tidak dipakai dalam seri Esri.</p>
+<p>Kolom <code>Shape_Leng</code> dan <code>Shape_Area</code> di sebagian berkas adalah sisa
+pengolahan di ArcGIS. Hitung ulang luas dalam proyeksi yang sesuai,
+jangan memakai kolom tersebut.</p>
+<h2>Kegunaan dalam kajian hidrologi</h2>
+<ul>
+<li><strong>Parameter limpasan</strong>, misalnya bilangan kurva (<em>curve number</em>) atau
+  koefisien limpasan per jenis tutupan lahan.</li>
+<li><strong>Kekasaran permukaan</strong> untuk model genangan dan aliran permukaan.</li>
+<li><strong>Karakteristik DAS</strong>, misalnya persentase hutan atau lahan terbangun di
+  suatu daerah aliran sungai.</li>
+<li><strong>Perubahan tutupan lahan</strong>, bila dibandingkan dengan peta tahun lain
+  dari seri yang sama.</li>
+</ul>
+<p>Peta ini dibuat secara otomatis dengan model <em>deep learning</em>, sehingga pada
+skala lokal kelasnya bisa keliru. Periksa dengan citra resolusi tinggi atau
+survei lapangan bila dipakai untuk kajian rinci.</p>
+<h2>Atribusi dan sitasi</h2>
+<p>Lisensi CC BY 4.0 mewajibkan pencantuman sumber. Bila memakai data ini,
+cantumkan sumber Esri/Impact Observatory dan rujukan berikut:</p>
+<blockquote>
+<p>Karra, K., Kontgis, C., Statman-Weil, Z., Mazzariello, J. C., Mathis, M.,
+&amp; Brumby, S. P. (2021). Global land use / land cover with Sentinel 2 and
+deep learning. <em>2021 IEEE International Geoscience and Remote Sensing
+Symposium IGARSS</em>, 4704–4707.
+<a href="https://doi.org/10.1109/IGARSS47720.2021.9553499" rel="noopener" target="_blank">https://doi.org/10.1109/IGARSS47720.2021.9553499</a></p>
+</blockquote>
+</article>
+<h2>Unduh data</h2>
+<div class="card-grid">
+
+<div class="card">
+  <div class="meta"><span class="badge">GEOPACKAGE</span></div>
+  <h2>Landcover Sentinel 2A</h2>
+  <p>Data ini merupakan data tutupan lahan 2024 yang diolah dari sumber data Sentinel: <a href="https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=14.59029%2C51.86863%2C11.00&amp;mode=step&amp;timeExtent=2017%2C2025&amp;year=2025" target="_blank" rel="noopener">livingatlas.arcgis.com/… ↗</a></p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> Sentinel 2A</div><div><span class="k">Cakupan:</span> Sumatera, Kalimantan, Jawa–Bali, dan Nusa Tenggara</div><div><span class="k">Periode:</span> 2024</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Desember  2025</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1s5KhbCBPJx8iy4aftGkm_Zrg3F9kJM5p?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+</div>
+
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-title">HESLab · Hydro-Environmental Systems Laboratory</div>
+      <div class="footer-line">Program Studi Teknik Sipil · Universitas Pertamina</div>
+      <div class="footer-line">Universitas Pertamina, Jl. Teuku Nyak Arief, Simprug, Kebayoran Lama, Jakarta Selatan, Indonesia</div>
+      <div class="footer-line"><a href="mailto:heslab.uper@gmail.com">heslab.uper@gmail.com</a></div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-links">
+        <a href="../../../tentang/index.html">Tentang</a>
+        <a href="../../../kontak/index.html">Kontak</a>
+        <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
+      </div>
+      <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
+      <div class="footer-line">Diperbarui 2026-10-21</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GSMaP NRT (Near Real-Time) · HESLab</title>
+<meta name="description" content="Produk hujan satelit JAXA dengan jeda sekitar 4 jam: versi yang tersedia dan hal yang perlu diperhatikan.">
+<link rel="canonical" href="https://heslab-uper.com/data/hujan-satelit/gsmap-nrt/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HESLab · Hydro-Environmental Systems Laboratory">
+<meta property="og:title" content="GSMaP NRT (Near Real-Time) · HESLab">
+<meta property="og:description" content="Produk hujan satelit JAXA dengan jeda sekitar 4 jam: versi yang tersedia dan hal yang perlu diperhatikan.">
+<meta property="og:url" content="https://heslab-uper.com/data/hujan-satelit/gsmap-nrt/">
+<meta property="og:image" content="https://heslab-uper.com/assets/img/uper-lambang.png">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-10-21">
+<link rel="icon" href="../../../assets/img/uper-lambang.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip-link" href="#konten">Langsung ke konten</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../../index.html">
+      <img class="brand-logo" src="../../../assets/img/uper-lambang.png" alt="Lambang Universitas Pertamina">
+      <span class="brand-text">
+        <span class="brand-name">HESLab</span>
+        <span class="brand-sub">Hydro-Environmental Systems Laboratory</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="../../../tentang/index.html">Tentang</a>
+      <a href="../../../riset/index.html">Riset</a>
+      <a href="../../../artikel/index.html">Artikel</a>
+      <a href="../../../publikasi/index.html">Publikasi</a>
+      <a href="../../../data/index.html" class="active" aria-current="page">Data</a>
+      <a href="../../../kegiatan/index.html">Kegiatan</a>
+      <a href="../../../kontak/index.html">Kontak</a>
+      <a class="portal-link" href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal ↗</a>
+    </nav>
+  </div>
+  <!-- Garis hidrograf: motif air, satu keluarga dengan motif ombak portal -->
+  <svg class="hydrograph" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,22 L120,22 L180,20 L260,8 L310,3 L360,10 L430,18 L560,21 L640,14 L700,6 L760,12 L860,20 L1000,22 L1200,22"
+          fill="none" stroke="var(--wave-600)" stroke-width="2.5"/>
+  </svg>
+</header>
+
+<main class="wrap" id="konten" tabindex="-1">
+<p class="backlink"><a href="../index.html">← Data Hujan Satelit</a></p>
+<div class="eyebrow">Data · Data Hujan Satelit</div>
+<h1>GSMaP NRT (Near Real-Time)</h1>
+<p class="lead">Produk hujan satelit JAXA dengan jeda sekitar 4 jam: versi yang tersedia dan hal yang perlu diperhatikan.</p>
+<article class="artikel-isi">
+<p>GSMaP NRT (<em>Near Real-Time</em>) adalah produk curah hujan satelit dari JAXA
+yang terbit sekitar <strong>4 jam</strong> setelah pengamatan. Produk ini menjadi jalan
+tengah antara GSMaP NOW, yang hampir tanpa jeda tetapi kurang akurat, dan
+GSMaP Standard, yang lebih akurat tetapi baru tersedia sekitar 3 hari
+kemudian. Karena itu GSMaP NRT banyak dipakai untuk pemantauan banjir dan
+analisis kejadian hujan yang baru saja berlangsung.</p>
+<p>HESLab menyediakan GSMaP NRT tanpa koreksi penakar hujan (<em>ungauged</em>) untuk
+wilayah Indonesia dalam berkas NetCDF bulanan. Halaman ini menjelaskan isi
+berkasnya, perbedaan antarversi, dan hal-hal yang perlu diperhatikan
+sebelum memakainya.</p>
+<h2>Ringkasan produk</h2>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Ciri</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penyedia</td>
+<td>JAXA (Japan Aerospace Exploration Agency)</td>
+</tr>
+<tr>
+<td>Dasar estimasi</td>
+<td>gabungan satelit gelombang mikro pasif dan inframerah, tanpa koreksi penakar hujan</td>
+</tr>
+<tr>
+<td>Jeda terbit</td>
+<td>sekitar 4 jam setelah pengamatan</td>
+</tr>
+<tr>
+<td>Resolusi</td>
+<td>0,1° × 0,1° (sekitar 11 km), per jam</td>
+</tr>
+<tr>
+<td>Satuan</td>
+<td>mm/jam</td>
+</tr>
+<tr>
+<td>Wilayah berkas HESLab</td>
+<td>15,05° LU – 15,05° LS, 90,05° – 150,05° BT</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>NetCDF, satu berkas per bulan</td>
+</tr>
+</tbody>
+</table></div>
+<p>Menurut JAXA, produk dengan jeda lebih pendek cenderung kurang akurat
+dibanding produk Standard. GSMaP NRT cocok untuk kebutuhan yang menuntut
+data cepat, misalnya pemantauan dan peringatan dini banjir, bukan untuk
+analisis iklim jangka panjang.</p>
+<h2>Versi yang tersedia</h2>
+<p>Algoritma GSMaP diperbarui beberapa kali. Setiap versi menghasilkan nilai
+yang sedikit berbeda, sehingga <strong>satu deret waktu sebaiknya memakai satu
+versi saja</strong>.</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Versi algoritma</th>
+<th>Versi produk JAXA</th>
+<th>Dirilis JAXA</th>
+<th>Periode di HESLab</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v6</td>
+<td>V03</td>
+<td>September 2014</td>
+<td>April 2000 – sekarang</td>
+<td>diperbarui</td>
+</tr>
+<tr>
+<td>v7</td>
+<td>V04</td>
+<td>Januari 2017</td>
+<td>April 2017 – Juni 2026</td>
+<td>berhenti (JAXA menghentikan pembaruan NRT v7 pada 29 Juni 2026)</td>
+</tr>
+<tr>
+<td>v8</td>
+<td>V05</td>
+<td>Desember 2021</td>
+<td>Januari 1998 – sekarang</td>
+<td>diperbarui</td>
+</tr>
+<tr>
+<td>v9</td>
+<td>—</td>
+<td>19 Oktober 2026</td>
+<td>19 Oktober 2026 – sekarang (HESLab Portal)</td>
+<td>diperbarui; unduhan berkas menyusul</td>
+</tr>
+</tbody>
+</table></div>
+<p>Versi 7 memperkenalkan, antara lain, basis data dari radar GPM/DPR,
+estimasi salju, perbaikan metode koreksi penakar hujan, dan perbaikan
+koreksi hujan orografis. Versi 8 memperbarui algoritma gelombang mikro dan
+penggabungan gelombang mikro–inframerah, serta metode koreksi penakar
+hujan. Rincian ada di catatan rilis JAXA untuk
+<a href="https://www.eorc.jaxa.jp/GPM/doc/product_info/release_note_gsmapv04-v7_en.pdf" rel="noopener" target="_blank">versi 7</a>
+dan <a href="https://www.eorc.jaxa.jp/GPM/doc/product_info/release_note_gsmapv05-v8_en.pdf" rel="noopener" target="_blank">versi 8</a>,
+serta <a href="https://www.eorc.jaxa.jp/GPM/en/gsmap.html" rel="noopener" target="_blank">halaman GSMaP JAXA</a>
+untuk versi 9.</p>
+<p>Bila Anda membutuhkan deret panjang yang konsisten, pilih <strong>v8</strong>. Versi 6
+berguna bila model atau kajian lama Anda sudah dikalibrasi dengan v6.
+HESLab Portal memakai GSMaP NRT v8 tanpa koreksi untuk laporan hujan
+harian dan dasarian di 516 kabupaten/kota; sejak Oktober 2026 portal juga
+menampilkan NRT v9.</p>
+<h2>NRT atau NRT <em>gauged</em>?</h2>
+<p>HESLab juga menyediakan GSMaP NRT <em>gauged</em> (GSMaP_Gauge_NRT). Perbedaannya:</p>
+<ul>
+<li><strong>NRT</strong> (halaman ini) murni dari satelit.</li>
+<li><strong>NRT gauged</strong> disesuaikan agar mendekati data penakar hujan. Namun,
+  karena data penakar hujan global tidak tersedia secepat itu, JAXA tidak
+  memakai data penakar secara langsung; yang dipakai adalah parameter
+  kesalahan yang diturunkan dari produk GSMaP_Gauge (versi Standard yang
+  dikoreksi dengan analisis penakar hujan harian NOAA CPC).</li>
+</ul>
+<p>Lihat juga <a href="../memilih-produk-gsmap/index.html">Memilih produk GSMaP yang tepat</a>.</p>
+<h2>Berkas dan cara membacanya</h2>
+<p>GSMaP NRT di HESLab disediakan dalam berkas NetCDF bulanan dengan hujan per
+jam (mm/jam) pada grid 0,1°, waktu dalam UTC. Struktur berkas, hal-hal yang
+sering menimbulkan kesalahan (zona waktu, urutan lintang, nilai nol, jam
+yang hilang), dan contoh kode Python dijelaskan di halaman
+<a href="../format-berkas-gsmap/index.html">Format berkas GSMaP HESLab</a>.</p>
+<h2>Catatan khusus GSMaP NRT</h2>
+<ol>
+<li><strong>Berkas bulan berjalan belum lengkap.</strong> Berkas itu hanya memuat jam
+   sampai data NRT terakhir yang terbit saat berkas dibuat (lihat atribut
+   <code>history</code>); jam sesudahnya tidak ada dan tidak diisi data NOW.</li>
+<li><strong>Hujan lebat dan hujan lemah.</strong> JAXA mencatat bahwa algoritma gelombang
+   mikro sejak versi 8 cenderung menaksir terlalu besar hujan lebat seperti
+   hujan konvektif dan siklon, sementara hujan lemah sulit terdeteksi oleh
+   sebagian sensor satelit. Hujan orografis juga masih bisa ditaksir
+   berlebih.</li>
+<li><strong>Wilayah kepulauan.</strong> Dalam catatan rilis versi 9, JAXA menyebut
+   perbaikan atas estimasi hujan berlebih di wilayah kepulauan yang
+   disebabkan oleh tabel pencocokan darat–laut. Bagi wilayah Indonesia,
+   hal ini patut diperhatikan saat memakai versi 8.</li>
+<li><strong>Bandingkan dengan data setempat.</strong> Bila tersedia, bandingkan dengan
+   data pos hujan sebelum memakai GSMaP NRT untuk analisis kuantitatif.</li>
+</ol>
+</article>
+<h2>Unduh data</h2>
+<div class="card-grid">
+
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP NRT Ver 6</h2>
+  <p>Produk near real-time algoritma versi 6, latency ±4 jam sejak observasi. Data mentah (belum dikoreksi gauge), resolusi 0.1°/jam.</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1ZGsYjLOUocvV9ki5fIkprz4iOIrJOeUX?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP NRT Ver 7</h2>
+  <p>Sama seperti Ver 6, namun menggunakan algoritma versi 7 (perbaikan akurasi retrieval microwave-IR dan kontrol kualitas dibanding versi sebelumnya). Latency ±4 jam, belum dikoreksi gauge.</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2017 - Juni 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/14sqkerXyPeKFKN1PysgTPvoZHM150gtM?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP NRT Ver 8</h2>
+  <p>Algoritma versi 8 (rilis Desember 2021), perbaikan lanjutan pada modul microwave-IR combined. Latency ±4 jam (beberapa evaluasi melaporkan turun hingga ±2 jam), belum dikoreksi gauge.</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1J5QPPVWZ5arNPyH3tFp29Ici0KgIsDJd?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+</div>
+
+<section class="sitasi-box">
+  <h2>Sitasi &amp; Pengolahan Data</h2>
+  <p class="lead">Jika data pada halaman ini digunakan dalam publikasi,
+  laporan, atau karya turunan, mohon cantumkan sitasi berikut.</p>
+  
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI WAJIB</span></div>
+  <p class="sitasi-teks">Kubota, T., Aonashi, K., Ushio, T., Shige, S., Takayabu, Y.N., Kachi, M., Arai, Y., Tashima, T., Masaki, T., Kawamoto, N., Mega, T., Yamamoto, M.K., Hamada, A., Yamaji, M., Liu, G., Oki, R., 2020. Global Satellite Mapping of Precipitation (GSMaP) Products in the GPM Era, in: Levizzani, V., Kidd, C., Kirschbaum, D.B., Kummerow, C.D., Nakamura, K., Turk, F.J. (Eds.), Satellite Precipitation Measurement: Volume 1. Springer International Publishing, Cham, pp. 355-373. <a href="https://doi.org/10.1007/978-3-030-24568-9_20" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-030-24568-9_20</a></p>
+</div>
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI OPSIONAL</span></div>
+  <p class="sitasi-teks">Januriyadi, N.F., 2026. GSMaP Indonesia Data Repository: Processed NetCDF Archive of GSMaP Products for Indonesia. <a href="https://doi.org/10.5281/ZENODO.21310669" target="_blank" rel="noopener">https://doi.org/10.5281/ZENODO.21310669</a></p>
+</div>
+<div class="card tool-card">
+  <div class="meta"><span class="badge">ALAT BANTU PENGOLAHAN</span></div>
+  <h3>gsmap-explorer</h3>
+  <p>Seluruh dataset NetCDF (.nc) di atas dapat dibuka, diekstrak, dan divisualisasikan menggunakan gsmap-explorer, tools open-source berbasis Python untuk data GSMaP.</p>
+  <a class="doclink" href="https://github.com/heslab-uper/gsmap-explorer" target="_blank" rel="noopener">github.com/heslab-uper/gsmap-explorer →</a>
+</div>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-title">HESLab · Hydro-Environmental Systems Laboratory</div>
+      <div class="footer-line">Program Studi Teknik Sipil · Universitas Pertamina</div>
+      <div class="footer-line">Universitas Pertamina, Jl. Teuku Nyak Arief, Simprug, Kebayoran Lama, Jakarta Selatan, Indonesia</div>
+      <div class="footer-line"><a href="mailto:heslab.uper@gmail.com">heslab.uper@gmail.com</a></div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-links">
+        <a href="../../../tentang/index.html">Tentang</a>
+        <a href="../../../kontak/index.html">Kontak</a>
+        <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
+      </div>
+      <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
+      <div class="footer-line">Diperbarui 2026-10-21</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

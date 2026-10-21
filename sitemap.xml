@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://heslab-uper.com/artikel/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/artikel/survei-debit-sesaat/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
     <loc>https://heslab-uper.com/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/data/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/data/gis/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/gis/landcover-sentinel2/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/data/hujan-satelit/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/format-berkas-gsmap/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/gsmap-now/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/gsmap-nrt/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/gsmap-nrt-gauged/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/gsmap-standard/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/gsmap-standard-gauged/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/data/hujan-satelit/memilih-produk-gsmap/</loc>
+    <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://heslab-uper.com/kebijakan-privasi/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/kegiatan/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/kontak/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/publikasi/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/riset/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://heslab-uper.com/tentang/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-21</lastmod>
   </url>
 </urlset>

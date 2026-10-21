@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Format berkas GSMaP HESLab · HESLab</title>
+<meta name="description" content="Isi berkas NetCDF, zona waktu, urutan lintang, nilai nol, jam yang hilang, dan contoh membaca data dengan Python.">
+<link rel="canonical" href="https://heslab-uper.com/data/hujan-satelit/format-berkas-gsmap/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HESLab · Hydro-Environmental Systems Laboratory">
+<meta property="og:title" content="Format berkas GSMaP HESLab · HESLab">
+<meta property="og:description" content="Isi berkas NetCDF, zona waktu, urutan lintang, nilai nol, jam yang hilang, dan contoh membaca data dengan Python.">
+<meta property="og:url" content="https://heslab-uper.com/data/hujan-satelit/format-berkas-gsmap/">
+<meta property="og:image" content="https://heslab-uper.com/assets/img/uper-lambang.png">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-10-21">
+<link rel="icon" href="../../../assets/img/uper-lambang.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip-link" href="#konten">Langsung ke konten</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../../index.html">
+      <img class="brand-logo" src="../../../assets/img/uper-lambang.png" alt="Lambang Universitas Pertamina">
+      <span class="brand-text">
+        <span class="brand-name">HESLab</span>
+        <span class="brand-sub">Hydro-Environmental Systems Laboratory</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="../../../tentang/index.html">Tentang</a>
+      <a href="../../../riset/index.html">Riset</a>
+      <a href="../../../artikel/index.html">Artikel</a>
+      <a href="../../../publikasi/index.html">Publikasi</a>
+      <a href="../../../data/index.html" class="active" aria-current="page">Data</a>
+      <a href="../../../kegiatan/index.html">Kegiatan</a>
+      <a href="../../../kontak/index.html">Kontak</a>
+      <a class="portal-link" href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal ↗</a>
+    </nav>
+  </div>
+  <!-- Garis hidrograf: motif air, satu keluarga dengan motif ombak portal -->
+  <svg class="hydrograph" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,22 L120,22 L180,20 L260,8 L310,3 L360,10 L430,18 L560,21 L640,14 L700,6 L760,12 L860,20 L1000,22 L1200,22"
+          fill="none" stroke="var(--wave-600)" stroke-width="2.5"/>
+  </svg>
+</header>
+
+<main class="wrap" id="konten" tabindex="-1">
+<p class="backlink"><a href="../index.html">← Data Hujan Satelit</a></p>
+<div class="eyebrow">Data · Data Hujan Satelit</div>
+<h1>Format berkas GSMaP HESLab</h1>
+<p class="lead">Isi berkas NetCDF, zona waktu, urutan lintang, nilai nol, jam yang hilang, dan contoh membaca data dengan Python.</p>
+<article class="artikel-isi">
+<p>Semua produk GSMaP di HESLab (NOW, NRT, NRT <em>gauged</em>, Standard, dan
+Standard <em>gauged</em>) disediakan dalam berkas NetCDF dengan struktur yang
+sama. Halaman ini menjelaskan isi berkas tersebut, beberapa hal yang sering
+menimbulkan kesalahan, dan contoh cara membacanya dengan Python.</p>
+<h2>Isi berkas</h2>
+<p>Setiap berkas berisi <strong>satu bulan</strong> data hujan per jam untuk wilayah
+Indonesia dan sekitarnya.</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Variabel</th>
+<th>Dimensi</th>
+<th>Satuan</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>precipitation</code></td>
+<td>(time, lat, lon)</td>
+<td>mm/jam</td>
+<td>laju hujan dalam satu jam</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>time</td>
+<td>jam sejak 1970-01-01 00:00</td>
+<td><strong>UTC</strong>, menandai <strong>awal</strong> jam pengamatan</td>
+</tr>
+<tr>
+<td><code>lat</code></td>
+<td>lat</td>
+<td>derajat lintang</td>
+<td>dari utara ke selatan (15,05 → −15,05), langkah 0,1°</td>
+</tr>
+<tr>
+<td><code>lon</code></td>
+<td>lon</td>
+<td>derajat bujur</td>
+<td>dari barat ke timur (90,05 → 150,05), langkah 0,1°</td>
+</tr>
+</tbody>
+</table></div>
+<p>Satu berkas untuk bulan 31 hari berukuran 744 × 302 × 601 sel (jam ×
+lintang × bujur). Nilai koordinat adalah titik tengah sel grid 0,1°.</p>
+<p>Nama berkas mengikuti pola <code>gsmap_&lt;produk&gt;_&lt;YYYYMM&gt;.nc</code>, satu berkas per
+bulan UTC, disimpan di folder per tahun:</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Produk</th>
+<th>Contoh nama berkas</th>
+<th>Folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NOW</td>
+<td><code>gsmap_now_202601.nc</code></td>
+<td><code>NOW/NC/2026/</code></td>
+</tr>
+<tr>
+<td>NRT v8</td>
+<td><code>gsmap_nrt_v8_nga_202601.nc</code></td>
+<td><code>NRT/V8/NGA/NC/2026/</code></td>
+</tr>
+<tr>
+<td>NRT v8 <em>gauged</em></td>
+<td><code>gsmap_nrt_v8_ga_202601.nc</code></td>
+<td><code>NRT/V8/GA/NC/2026/</code></td>
+</tr>
+<tr>
+<td>Standard v8</td>
+<td><code>gsmap_std_v8_nga_202601.nc</code></td>
+<td><code>STD/V8/NGA/NC/2026/</code></td>
+</tr>
+<tr>
+<td>Standard v8 <em>gauged</em></td>
+<td><code>gsmap_std_v8_ga_202601.nc</code></td>
+<td><code>STD/V8/GA/NC/2026/</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><code>nga</code> berarti tanpa koreksi penakar hujan, <code>ga</code> dengan koreksi. Versi lain
+mengganti <code>v8</code> dan <code>V8</code>, misalnya <code>gsmap_std_v6_ga_200003.nc</code> di
+<code>STD/V6/GA/NC/2000/</code>.</p>
+<h2>Hal yang perlu diperhatikan</h2>
+<ol>
+<li><strong>Waktu dalam UTC, menandai awal jam.</strong> Nilai berstempel 00:00 UTC
+   adalah hujan selama 00:00–01:00 UTC, yaitu 07:00–08:00 WIB. Sebelum
+   menjumlahkan hujan harian dengan jendela waktu setempat (misalnya
+   pukul 07:00 sampai 07:00 WIB esok harinya), geser waktunya lebih dulu.
+   Untuk WITA tambahkan 8 jam, untuk WIT 9 jam.</li>
+<li><strong>Lintang menurun.</strong> Baris pertama adalah wilayah paling utara; ini
+   memang urutan data sumber JAXA, bukan kesalahan. Kode yang mengira
+   lintang naik akan menghasilkan peta terbalik tanpa pesan galat. Selalu
+   ambil sumbu dari berkas, jangan dibuat sendiri.</li>
+<li><strong>Nilai nol tidak selalu berarti tidak hujan.</strong> Data JAXA menandai
+   "tidak ada pengamatan" dengan nilai negatif; saat pengolahan nilai ini
+   diubah menjadi 0. Jadi 0 bisa berarti tidak hujan atau tidak ada data.</li>
+<li><strong>Jam yang hilang tidak diisi.</strong> Bila suatu jam tidak tersedia dari
+   JAXA, jam itu tidak ada di sumbu waktu. Akibatnya "24 nilai terakhir"
+   belum tentu sama dengan "24 jam terakhir". Periksa kelengkapan sebelum
+   menjumlahkan, misalnya dengan menghitung jumlah jam per hari.</li>
+<li><strong>Koordinat sedikit tidak bulat.</strong> Nilai <code>lat</code> dan <code>lon</code> disimpan
+   sebagai float32, sehingga langkahnya tidak tepat 0,1 (misalnya
+   0,099991). Gunakan pencarian sel terdekat (<code>method="nearest"</code>), bukan
+   pencocokan nilai persis.</li>
+</ol>
+<h2>Contoh membaca data dengan Python</h2>
+<p>Contoh berikut memakai pustaka <code>xarray</code>. Ganti nama berkas dengan berkas
+yang Anda unduh.</p>
+<pre><code class="language-python">import numpy as np
+import xarray as xr
+
+ds = xr.open_dataset(&quot;gsmap_nrt_v8_nga_202601.nc&quot;)
+hujan = ds[&quot;precipitation&quot;]                      # mm/jam, waktu UTC
+
+# Deret waktu di satu titik (Jakarta), sel terdekat
+titik = hujan.sel(lat=-6.2, lon=106.8, method=&quot;nearest&quot;)
+
+# Ubah ke WIB, lalu jumlahkan per hari kalender WIB
+titik_wib = titik.assign_coords(time=titik[&quot;time&quot;] + np.timedelta64(7, &quot;h&quot;))
+harian = titik_wib.resample(time=&quot;1D&quot;).sum()
+jumlah_jam = titik_wib.resample(time=&quot;1D&quot;).count()   # 24 = lengkap
+
+print(harian.to_series().head())
+print(jumlah_jam[jumlah_jam &lt; 24])                   # hari yang tidak lengkap
+</code></pre>
+<p>Untuk curah hujan rata-rata suatu wilayah (misalnya satu kabupaten atau
+DAS), potong grid dengan batas wilayahnya lalu hitung rata-rata sel di
+dalamnya. Untuk ekstraksi per wilayah dan visualisasi tanpa menulis kode,
+gunakan <strong>gsmap-explorer</strong> (lihat bagian Sitasi &amp; Pengolahan Data di
+bawah).</p>
+<h2>Produk yang memakai format ini</h2>
+<ul>
+<li><a href="../gsmap-now/index.html">GSMaP NOW</a></li>
+<li><a href="../gsmap-nrt/index.html">GSMaP NRT</a></li>
+<li><a href="../gsmap-nrt-gauged/index.html">GSMaP NRT gauged</a></li>
+<li><a href="../gsmap-standard/index.html">GSMaP Standard</a></li>
+<li><a href="../gsmap-standard-gauged/index.html">GSMaP Standard gauged</a></li>
+</ul>
+<p>Belum yakin produk mana yang cocok? Baca
+<a href="../memilih-produk-gsmap/index.html">Memilih produk GSMaP yang tepat</a>.</p>
+</article>
+
+
+<section class="sitasi-box">
+  <h2>Sitasi &amp; Pengolahan Data</h2>
+  <p class="lead">Jika data pada halaman ini digunakan dalam publikasi,
+  laporan, atau karya turunan, mohon cantumkan sitasi berikut.</p>
+  
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI WAJIB</span></div>
+  <p class="sitasi-teks">Kubota, T., Aonashi, K., Ushio, T., Shige, S., Takayabu, Y.N., Kachi, M., Arai, Y., Tashima, T., Masaki, T., Kawamoto, N., Mega, T., Yamamoto, M.K., Hamada, A., Yamaji, M., Liu, G., Oki, R., 2020. Global Satellite Mapping of Precipitation (GSMaP) Products in the GPM Era, in: Levizzani, V., Kidd, C., Kirschbaum, D.B., Kummerow, C.D., Nakamura, K., Turk, F.J. (Eds.), Satellite Precipitation Measurement: Volume 1. Springer International Publishing, Cham, pp. 355-373. <a href="https://doi.org/10.1007/978-3-030-24568-9_20" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-030-24568-9_20</a></p>
+</div>
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI OPSIONAL</span></div>
+  <p class="sitasi-teks">Januriyadi, N.F., 2026. GSMaP Indonesia Data Repository: Processed NetCDF Archive of GSMaP Products for Indonesia. <a href="https://doi.org/10.5281/ZENODO.21310669" target="_blank" rel="noopener">https://doi.org/10.5281/ZENODO.21310669</a></p>
+</div>
+<div class="card tool-card">
+  <div class="meta"><span class="badge">ALAT BANTU PENGOLAHAN</span></div>
+  <h3>gsmap-explorer</h3>
+  <p>Seluruh dataset NetCDF (.nc) di atas dapat dibuka, diekstrak, dan divisualisasikan menggunakan gsmap-explorer, tools open-source berbasis Python untuk data GSMaP.</p>
+  <a class="doclink" href="https://github.com/heslab-uper/gsmap-explorer" target="_blank" rel="noopener">github.com/heslab-uper/gsmap-explorer →</a>
+</div>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-title">HESLab · Hydro-Environmental Systems Laboratory</div>
+      <div class="footer-line">Program Studi Teknik Sipil · Universitas Pertamina</div>
+      <div class="footer-line">Universitas Pertamina, Jl. Teuku Nyak Arief, Simprug, Kebayoran Lama, Jakarta Selatan, Indonesia</div>
+      <div class="footer-line"><a href="mailto:heslab.uper@gmail.com">heslab.uper@gmail.com</a></div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-links">
+        <a href="../../../tentang/index.html">Tentang</a>
+        <a href="../../../kontak/index.html">Kontak</a>
+        <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
+      </div>
+      <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
+      <div class="footer-line">Diperbarui 2026-10-21</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

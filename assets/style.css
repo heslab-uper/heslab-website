@@ -216,6 +216,9 @@ details.member-group .card-grid { margin-top: 8px; }
 table.data { width: 100%; border-collapse: collapse; margin-top: 16px; background: var(--surface); }
 table.data th, table.data td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; font-size: 0.9rem; }
 table.data th { background: var(--river-100); font-family: var(--font-display); font-weight: 600; color: var(--ink-900); }
+/* Tabel dari Markdown: tabel lebar digulir di dalam pembungkus, halaman tidak ikut melebar */
+.table-wrap { overflow-x: auto; margin-top: 16px; }
+.table-wrap > table.data { margin-top: 0; }
 .note { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
 
 /* ---------------- Footer ---------------- */
@@ -337,3 +340,38 @@ h3.sub {
 }
 .misi { max-width: 68ch; padding-left: 20px; }
 .misi li { margin-bottom: 8px; }
+
+/* --- Slot iklan AdSense (page_utils.ad_slot) --- */
+.ad-slot {
+  margin: 32px 0; padding: 8px 12px 12px;
+  background: #F2F2F2; border-radius: var(--radius);
+}
+.ad-label {
+  font-family: var(--font-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: #73675A; margin-bottom: 6px;
+}
+
+/* --- Tautan halaman di footer (cfg.FOOTER_LINKS) --- */
+.footer-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; margin-bottom: 6px; }
+@media (max-width: 640px) {
+  .footer-links { justify-content: flex-start; }
+}
+
+/* --- Artikel (build_page_artikel.py) --- */
+.artikel-meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); margin: -4px 0 14px; }
+.artikel-isi { max-width: 72ch; font-size: 1.02rem; line-height: 1.7; }
+.artikel-isi h2 { margin-top: 2em; }
+.artikel-isi h3 { margin-top: 1.6em; }
+.artikel-isi figure { margin: 24px 0; }
+.artikel-isi img { max-width: 100%; height: auto; border-radius: var(--radius); }
+.artikel-isi figcaption { font-size: 0.85rem; color: var(--ink-500); margin-top: 6px; }
+.artikel-isi pre {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px; overflow-x: auto; font-size: 0.86rem; line-height: 1.5;
+}
+.artikel-isi code { font-family: var(--font-mono); font-size: 0.9em; }
+.artikel-isi :not(pre) > code { background: var(--river-100); padding: 1px 4px; border-radius: var(--radius); }
+.artikel-isi blockquote {
+  margin: 20px 0; padding-left: 16px; border-left: 3px solid var(--river-200); color: var(--ink-700);
+}

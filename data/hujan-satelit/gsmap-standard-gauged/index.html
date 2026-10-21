@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GSMaP Standard gauged · HESLab</title>
+<meta name="description" content="GSMaP Standard yang dikoreksi data penakar hujan NOAA CPC, pilihan untuk kalibrasi model dan analisis jangka panjang.">
+<link rel="canonical" href="https://heslab-uper.com/data/hujan-satelit/gsmap-standard-gauged/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HESLab · Hydro-Environmental Systems Laboratory">
+<meta property="og:title" content="GSMaP Standard gauged · HESLab">
+<meta property="og:description" content="GSMaP Standard yang dikoreksi data penakar hujan NOAA CPC, pilihan untuk kalibrasi model dan analisis jangka panjang.">
+<meta property="og:url" content="https://heslab-uper.com/data/hujan-satelit/gsmap-standard-gauged/">
+<meta property="og:image" content="https://heslab-uper.com/assets/img/uper-lambang.png">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-10-21">
+<link rel="icon" href="../../../assets/img/uper-lambang.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip-link" href="#konten">Langsung ke konten</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../../index.html">
+      <img class="brand-logo" src="../../../assets/img/uper-lambang.png" alt="Lambang Universitas Pertamina">
+      <span class="brand-text">
+        <span class="brand-name">HESLab</span>
+        <span class="brand-sub">Hydro-Environmental Systems Laboratory</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="../../../tentang/index.html">Tentang</a>
+      <a href="../../../riset/index.html">Riset</a>
+      <a href="../../../artikel/index.html">Artikel</a>
+      <a href="../../../publikasi/index.html">Publikasi</a>
+      <a href="../../../data/index.html" class="active" aria-current="page">Data</a>
+      <a href="../../../kegiatan/index.html">Kegiatan</a>
+      <a href="../../../kontak/index.html">Kontak</a>
+      <a class="portal-link" href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal ↗</a>
+    </nav>
+  </div>
+  <!-- Garis hidrograf: motif air, satu keluarga dengan motif ombak portal -->
+  <svg class="hydrograph" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,22 L120,22 L180,20 L260,8 L310,3 L360,10 L430,18 L560,21 L640,14 L700,6 L760,12 L860,20 L1000,22 L1200,22"
+          fill="none" stroke="var(--wave-600)" stroke-width="2.5"/>
+  </svg>
+</header>
+
+<main class="wrap" id="konten" tabindex="-1">
+<p class="backlink"><a href="../index.html">← Data Hujan Satelit</a></p>
+<div class="eyebrow">Data · Data Hujan Satelit</div>
+<h1>GSMaP Standard gauged</h1>
+<p class="lead">GSMaP Standard yang dikoreksi data penakar hujan NOAA CPC, pilihan untuk kalibrasi model dan analisis jangka panjang.</p>
+<article class="artikel-isi">
+<p>GSMaP Standard <em>gauged</em> (nama resmi JAXA: GSMaP_Gauge) adalah GSMaP
+Standard yang dikoreksi dengan data penakar hujan permukaan. Produk ini
+terbit sekitar <strong>3 hari</strong> setelah pengamatan dan menjadi pilihan utama
+bila akurasi lebih penting daripada kecepatan, misalnya untuk kalibrasi
+model hidrologi, analisis frekuensi hujan, dan kajian jangka panjang.</p>
+<h2>Ringkasan produk</h2>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Ciri</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penyedia</td>
+<td>JAXA (Japan Aerospace Exploration Agency)</td>
+</tr>
+<tr>
+<td>Dasar estimasi</td>
+<td>GSMaP Standard (MVK), dikoreksi dengan analisis penakar hujan harian NOAA CPC</td>
+</tr>
+<tr>
+<td>Jeda terbit</td>
+<td>sekitar 3 hari setelah pengamatan</td>
+</tr>
+<tr>
+<td>Resolusi</td>
+<td>0,1° × 0,1°, per jam</td>
+</tr>
+<tr>
+<td>Satuan</td>
+<td>mm/jam</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>NetCDF, satu berkas per bulan</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Bagaimana koreksinya bekerja</h2>
+<p>JAXA menyesuaikan taksiran satelit per jam dengan <em>CPC Unified Gauge-Based
+Analysis of Global Daily Precipitation</em>, yaitu analisis curah hujan harian
+global dari data penakar hujan yang disusun NOAA <em>Climate Prediction
+Center</em>. Rincian metodenya ada di dokumen algoritma JAXA
+(<a href="https://www.eorc.jaxa.jp/GPM/doc/algorithm/GSMaPforGPM_202610.pdf" rel="noopener" target="_blank">ATBD versi 9</a>).</p>
+<p>Konsekuensinya penting untuk dipahami. Menurut JAXA:</p>
+<ul>
+<li>Bila data CPC di suatu wilayah baik, GSMaP_Gauge juga cenderung baik.</li>
+<li>Bila data CPC menaksir terlalu besar, terlalu kecil, atau melewatkan
+  suatu kejadian hujan, GSMaP_Gauge cenderung ikut meleset dengan cara yang
+  sama.</li>
+<li>Data CPC, dan karena itu GSMaP_Gauge, tidak selalu akurat di wilayah yang
+  penakar hujannya jarang.</li>
+</ul>
+<h2>Versi yang tersedia</h2>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Versi algoritma</th>
+<th>Dirilis JAXA</th>
+<th>Periode di HESLab</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v6</td>
+<td>September 2014</td>
+<td>Maret 2000 – sekarang</td>
+<td>diperbarui</td>
+</tr>
+<tr>
+<td>v7</td>
+<td>Januari 2017</td>
+<td>Maret 2014 – Mei 2026</td>
+<td>berhenti (JAXA menghentikan pembaruan Standard v7 pada 31 Mei 2026)</td>
+</tr>
+<tr>
+<td>v8</td>
+<td>Desember 2021</td>
+<td>Januari 1998 – sekarang</td>
+<td>diperbarui</td>
+</tr>
+<tr>
+<td>v9</td>
+<td>19 Oktober 2026</td>
+<td>belum tersedia</td>
+<td>segera ditambahkan setelah diuji</td>
+</tr>
+</tbody>
+</table></div>
+<p>Menurut catatan rilis JAXA, pola buatan (<em>artificial patterns</em>) dari
+koreksi penakar hujan pada versi 7 dikurangi di versi 8, dan versi 9
+memperbaiki lagi artefak koreksi yang tidak alami. Untuk deret waktu
+panjang yang konsisten, <strong>v8</strong> adalah pilihan yang tersedia saat ini di
+HESLab.</p>
+<h2>Seberapa besar pengaruh koreksi?</h2>
+<p>Dalam validasi awal JAXA terhadap data radar yang dikoreksi penakar hujan
+<strong>di daratan Jepang</strong> (April–November 2014), produk Gauge memberi galat
+yang lebih kecil daripada produk Standard tanpa koreksi:</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Versi</th>
+<th>RMSE Standard (mm/jam)</th>
+<th>RMSE Standard gauged (mm/jam)</th>
+<th>Korelasi Standard</th>
+<th>Korelasi Standard gauged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v6</td>
+<td>0,345</td>
+<td>0,246</td>
+<td>0,573</td>
+<td>0,710</td>
+</tr>
+<tr>
+<td>v7</td>
+<td>0,371</td>
+<td>0,240</td>
+<td>0,594</td>
+<td>0,707</td>
+</tr>
+<tr>
+<td>v8</td>
+<td>0,348</td>
+<td>0,241</td>
+<td>0,605</td>
+<td>0,696</td>
+</tr>
+</tbody>
+</table></div>
+<p>Angka ini <strong>bukan</strong> ukuran akurasi di Indonesia. Karena mutu koreksi
+bergantung pada data CPC, manfaatnya di Indonesia bergantung pada
+kerapatan penakar hujan dalam data CPC di wilayah kajian Anda.</p>
+<h2>Kapan memakai Standard gauged</h2>
+<ul>
+<li><strong>Kalibrasi dan validasi model hidrologi</strong>, dengan satu versi untuk
+  seluruh periode kalibrasi dan simulasi.</li>
+<li><strong>Analisis frekuensi dan hujan rancangan</strong>, yang membutuhkan deret
+  panjang dan konsisten.</li>
+<li><strong>Kajian iklim dan tren</strong>, dengan catatan bahwa perubahan jaringan
+  penakar hujan dari waktu ke waktu dapat ikut memengaruhi hasil koreksi.</li>
+</ul>
+<p>Bila Anda membandingkan GSMaP dengan pos hujan sendiri untuk validasi,
+ingat bahwa pos tersebut mungkin sudah termasuk dalam data CPC, sehingga
+pembandingnya tidak sepenuhnya independen. Untuk validasi yang bebas dari
+pengaruh penakar, gunakan <a href="../gsmap-standard/index.html">GSMaP Standard</a>.</p>
+<h2>Berkas dan cara membacanya</h2>
+<p>Struktur berkas, zona waktu, dan contoh kode Python dijelaskan di halaman
+<a href="../format-berkas-gsmap/index.html">Format berkas GSMaP HESLab</a>. Untuk
+membandingkan dengan produk lain, baca
+<a href="../memilih-produk-gsmap/index.html">Memilih produk GSMaP yang tepat</a>.</p>
+</article>
+<h2>Unduh data</h2>
+<div class="card-grid">
+
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP Standard Ver 6 Gauged</h2>
+  <p>Versi  Standard Ver 6 yang dikoreksi gauge NOAA/CPC</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1JqJNU_lV12QrRLRnHuRH3t526axaKJfM?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP Standard Ver 7 Gauged</h2>
+  <p>Versi  Standard Ver 7 yang dikoreksi gauge NOAA/CPC</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2014 - Mei 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1c9Z4p-NT6Xtp0W0g3fxhKp2CFPjXJnxE?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+<div class="card">
+  <div class="meta"><span class="badge">NETCDF (.NC)</span></div>
+  <h2>GSMaP Standard Ver 8 Gauged</h2>
+  <p>Versi  Standard Ver 8 yang dikoreksi gauge NOAA/CPC</p>
+  <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  
+  <a class="btn-cta" href="https://drive.google.com/drive/folders/1hmQQwat1Ut5mv4ksvU6OYlsbhWdyTAw0?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
+</div>
+</div>
+
+<section class="sitasi-box">
+  <h2>Sitasi &amp; Pengolahan Data</h2>
+  <p class="lead">Jika data pada halaman ini digunakan dalam publikasi,
+  laporan, atau karya turunan, mohon cantumkan sitasi berikut.</p>
+  
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI WAJIB</span></div>
+  <p class="sitasi-teks">Kubota, T., Aonashi, K., Ushio, T., Shige, S., Takayabu, Y.N., Kachi, M., Arai, Y., Tashima, T., Masaki, T., Kawamoto, N., Mega, T., Yamamoto, M.K., Hamada, A., Yamaji, M., Liu, G., Oki, R., 2020. Global Satellite Mapping of Precipitation (GSMaP) Products in the GPM Era, in: Levizzani, V., Kidd, C., Kirschbaum, D.B., Kummerow, C.D., Nakamura, K., Turk, F.J. (Eds.), Satellite Precipitation Measurement: Volume 1. Springer International Publishing, Cham, pp. 355-373. <a href="https://doi.org/10.1007/978-3-030-24568-9_20" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-030-24568-9_20</a></p>
+</div>
+<div class="sitasi-item">
+  <div class="meta"><span class="badge">SITASI OPSIONAL</span></div>
+  <p class="sitasi-teks">Januriyadi, N.F., 2026. GSMaP Indonesia Data Repository: Processed NetCDF Archive of GSMaP Products for Indonesia. <a href="https://doi.org/10.5281/ZENODO.21310669" target="_blank" rel="noopener">https://doi.org/10.5281/ZENODO.21310669</a></p>
+</div>
+<div class="card tool-card">
+  <div class="meta"><span class="badge">ALAT BANTU PENGOLAHAN</span></div>
+  <h3>gsmap-explorer</h3>
+  <p>Seluruh dataset NetCDF (.nc) di atas dapat dibuka, diekstrak, dan divisualisasikan menggunakan gsmap-explorer, tools open-source berbasis Python untuk data GSMaP.</p>
+  <a class="doclink" href="https://github.com/heslab-uper/gsmap-explorer" target="_blank" rel="noopener">github.com/heslab-uper/gsmap-explorer →</a>
+</div>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-title">HESLab · Hydro-Environmental Systems Laboratory</div>
+      <div class="footer-line">Program Studi Teknik Sipil · Universitas Pertamina</div>
+      <div class="footer-line">Universitas Pertamina, Jl. Teuku Nyak Arief, Simprug, Kebayoran Lama, Jakarta Selatan, Indonesia</div>
+      <div class="footer-line"><a href="mailto:heslab.uper@gmail.com">heslab.uper@gmail.com</a></div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-links">
+        <a href="../../../tentang/index.html">Tentang</a>
+        <a href="../../../kontak/index.html">Kontak</a>
+        <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
+      </div>
+      <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
+      <div class="footer-line">Diperbarui 2026-10-21</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

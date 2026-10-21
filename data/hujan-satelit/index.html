@@ -17,8 +17,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=2026-10-14">
+<link rel="stylesheet" href="../../assets/style.css?v=2026-10-21">
 <link rel="icon" href="../../assets/img/uper-lambang.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip-link" href="#konten">Langsung ke konten</a>
@@ -35,6 +36,7 @@
     <nav class="site-nav" aria-label="Navigasi utama">
       <a href="../../tentang/index.html">Tentang</a>
       <a href="../../riset/index.html">Riset</a>
+      <a href="../../artikel/index.html">Artikel</a>
       <a href="../../publikasi/index.html">Publikasi</a>
       <a href="../../data/index.html" class="active" aria-current="page">Data</a>
       <a href="../../kegiatan/index.html">Kegiatan</a>
@@ -54,6 +56,46 @@
 <div class="eyebrow">Data</div>
 <h1>Data Hujan Satelit</h1>
 <p class="lead">Data curah hujan satelit (GSMaP) dalam format NetCDF untuk riset dan analisis.</p>
+<h2>Panduan &amp; dokumentasi</h2>
+<div class="card-grid">
+
+<div class="card">
+  <h3><a href="memilih-produk-gsmap/index.html">Memilih produk GSMaP yang tepat</a></h3>
+  <p>Perbedaan GSMaP NOW, NRT, dan Standard, arti gauged, dan cara memilih versi algoritma sesuai kebutuhan.</p>
+  <a class="doclink" href="memilih-produk-gsmap/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="format-berkas-gsmap/index.html">Format berkas GSMaP HESLab</a></h3>
+  <p>Isi berkas NetCDF, zona waktu, urutan lintang, nilai nol, jam yang hilang, dan contoh membaca data dengan Python.</p>
+  <a class="doclink" href="format-berkas-gsmap/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="gsmap-now/index.html">GSMaP NOW (Realtime)</a></h3>
+  <p>Produk hujan satelit JAXA hampir tanpa jeda untuk memantau hujan yang sedang berlangsung, beserta keterbatasannya.</p>
+  <a class="doclink" href="gsmap-now/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="gsmap-nrt/index.html">GSMaP NRT (Near Real-Time)</a></h3>
+  <p>Produk hujan satelit JAXA dengan jeda sekitar 4 jam: versi yang tersedia dan hal yang perlu diperhatikan.</p>
+  <a class="doclink" href="gsmap-nrt/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="gsmap-nrt-gauged/index.html">GSMaP NRT gauged</a></h3>
+  <p>GSMaP NRT yang disesuaikan dengan parameter koreksi penakar hujan: cara kerja, versi, dan kapan memilihnya.</p>
+  <a class="doclink" href="gsmap-nrt-gauged/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="gsmap-standard/index.html">GSMaP Standard (MVK)</a></h3>
+  <p>Produk hujan satelit JAXA paling akurat tanpa koreksi penakar, jeda sekitar 3 hari, beserta perbandingan antarversi.</p>
+  <a class="doclink" href="gsmap-standard/index.html">Baca →</a>
+</div>
+<div class="card">
+  <h3><a href="gsmap-standard-gauged/index.html">GSMaP Standard gauged</a></h3>
+  <p>GSMaP Standard yang dikoreksi data penakar hujan NOAA CPC, pilihan untuk kalibrasi model dan analisis jangka panjang.</p>
+  <a class="doclink" href="gsmap-standard-gauged/index.html">Baca →</a>
+</div>
+</div>
+<h2>Unduh data</h2>
 <div class="card-grid">
 
 <div class="card">
@@ -61,6 +103,7 @@
   <h2>GSMaP Now</h2>
   <p>Produk hujan real-time JAXA, diperbarui setiap jam dengan latency ±1 jam sejak observasi. Bresolusi temporal 1 jam.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret 2017 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-now/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1Yp7Rk2-lI_phPFVm7YNHyYXlq1izNl69?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -68,6 +111,7 @@
   <h2>GSMaP NRT Ver 6</h2>
   <p>Produk near real-time algoritma versi 6, latency ±4 jam sejak observasi. Data mentah (belum dikoreksi gauge), resolusi 0.1°/jam.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-nrt/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1ZGsYjLOUocvV9ki5fIkprz4iOIrJOeUX?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -75,6 +119,7 @@
   <h2>GSMaP NRT Ver 7</h2>
   <p>Sama seperti Ver 6, namun menggunakan algoritma versi 7 (perbaikan akurasi retrieval microwave-IR dan kontrol kualitas dibanding versi sebelumnya). Latency ±4 jam, belum dikoreksi gauge.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2017 - Juni 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  <a class="doclink" href="gsmap-nrt/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/14sqkerXyPeKFKN1PysgTPvoZHM150gtM?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -82,6 +127,7 @@
   <h2>GSMaP NRT Ver 8</h2>
   <p>Algoritma versi 8 (rilis Desember 2021), perbaikan lanjutan pada modul microwave-IR combined. Latency ±4 jam (beberapa evaluasi melaporkan turun hingga ±2 jam), belum dikoreksi gauge.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-nrt/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1J5QPPVWZ5arNPyH3tFp29Ici0KgIsDJd?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -89,6 +135,7 @@
   <h2>GSMaP NRT Ver 6 gauged</h2>
   <p>Versi NRT Ver 6 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-nrt-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1lYdCIuFZyRXJxWiwKaFxJG10bxEoluLz?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -96,6 +143,7 @@
   <h2>GSMaP NRT Ver 7 gauged</h2>
   <p>Versi NRT Ver 7 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> April 2017 - Juni 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  <a class="doclink" href="gsmap-nrt-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1gOguD9Sf4tIenQLXiPRNwZWFHvqG8R-U?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -103,6 +151,7 @@
   <h2>GSMaP NRT Ver 8 gauged</h2>
   <p>Versi NRT Ver 8 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-nrt-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1JWYn_2amjSTGjhZCrldqxJV05kIoS8KH?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -110,6 +159,7 @@
   <h2>GSMaP Standard Ver 6</h2>
   <p>Produk penelitian/pasca-real-time (dikenal juga sebagai MVK) algoritma versi 6.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-standard/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1iML3-IHHujOoNrzfqXq1g4vd9ZFqm3XI?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -117,6 +167,7 @@
   <h2>GSMaP Standard Ver 7</h2>
   <p>Produk penelitian/pasca-real-time (dikenal juga sebagai MVK) algoritma versi 7.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2014 - Mei 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  <a class="doclink" href="gsmap-standard/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1AATS1ZOit9jNr8wRdW2lebsQEF7ED-1u?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -124,6 +175,7 @@
   <h2>GSMaP Standard Ver 8</h2>
   <p>Produk penelitian/pasca-real-time (dikenal juga sebagai MVK) algoritma versi 8.</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-standard/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1z1z2OgRw5l-9Zt5nErBugq1Rc4X5t7cB?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -131,6 +183,7 @@
   <h2>GSMaP Standard Ver 6 Gauged</h2>
   <p>Versi  Standard Ver 6 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2000 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-standard-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1JqJNU_lV12QrRLRnHuRH3t526axaKJfM?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -138,6 +191,7 @@
   <h2>GSMaP Standard Ver 7 Gauged</h2>
   <p>Versi  Standard Ver 7 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Maret  2014 - Mei 2026</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Berhenti</div></div>
+  <a class="doclink" href="gsmap-standard-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1c9Z4p-NT6Xtp0W0g3fxhKp2CFPjXJnxE?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 <div class="card">
@@ -145,6 +199,7 @@
   <h2>GSMaP Standard Ver 8 Gauged</h2>
   <p>Versi  Standard Ver 8 yang dikoreksi gauge NOAA/CPC</p>
   <div class="dl-meta"><div><span class="k">Sumber:</span> GSMaP (JAXA)</div><div><span class="k">Cakupan:</span> Indonesia</div><div><span class="k">Periode:</span> Januari 1998 -</div><div><span class="k">Ukuran:</span> -</div><div><span class="k">Update terakhir:</span> Setiap hari</div></div>
+  <a class="doclink" href="gsmap-standard-gauged/index.html">Dokumentasi →</a>
   <a class="btn-cta" href="https://drive.google.com/drive/folders/1hmQQwat1Ut5mv4ksvU6OYlsbhWdyTAw0?usp=sharing" target="_blank" rel="noopener">Unduh ↓</a>
 </div>
 </div>
@@ -170,6 +225,7 @@
 </div>
 </section>
 
+
 </main>
 
 <footer class="site-footer">
@@ -181,8 +237,13 @@
       <div class="footer-line"><a href="mailto:heslab.uper@gmail.com">heslab.uper@gmail.com</a></div>
     </div>
     <div class="footer-meta">
+      <div class="footer-links">
+        <a href="../../tentang/index.html">Tentang</a>
+        <a href="../../kontak/index.html">Kontak</a>
+        <a href="../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
+      </div>
       <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
-      <div class="footer-line">Diperbarui 2026-10-14</div>
+      <div class="footer-line">Diperbarui 2026-10-21</div>
     </div>
   </div>
 </footer>
