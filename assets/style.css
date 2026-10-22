@@ -1,32 +1,36 @@
 /* ==================================================================
    HESLab Website — style.css
    Sistem warna & tipografi MENGIKUTI HESLab Portal:
-   - Skala "river" berbasis biru resmi Universitas Pertamina (#0077C0)
-   - Masthead gelap river-900, radius kecil 3px, font IBM Plex
+   - Palet identitas (pemilik 2026-10-22): biru #0077C0, biru tua
+     #005990, hitam #231F20, abu-cokelat #73675A, abu terang #F2F2F2;
+     tanpa warna aksen dekoratif. Nilai identik dengan portal.css.
+   - Radius kecil 3px, font IBM Plex
    - Logo: assets/img/uper-lambang.png (file yang sama dengan portal)
+
+   Kontras WCAG AA (minimal 4,5:1), dihitung 2026-10-22:
+     --muted #73675A / putih 5,50:1 (dulu #6E848F 3,92:1, gagal);
+     --river-700 / putih 4,77:1; putih / --river-900 7,42:1;
+     #E6F1F8 / --river-900 6,46:1 (teks kepala halaman);
+     #F2F2F2 / #231F20 14,56:1 (teks footer).
    ================================================================== */
 
 :root {
-  /* --- Palet river (identik dengan heslab-portal) --- */
-  --river-900: #003F66;   /* masthead */
-  --river-800: #00558A;
+  --river-900: #005990;   /* kepala halaman */
+  --river-800: #005990;   /* hover, tautan di atas latar abu */
   --river-700: #0077C0;   /* PRIMARY — biru resmi UPer */
-  --river-600: #008EE6;   /* hover & elemen non-teks */
-  --river-500: #1AA8FF;   /* aksen, garis, ikon */
-  --river-200: #A8DEFF;   /* pinggir kartu */
-  --river-100: #E5F5FF;   /* latar tint pucat */
+  --river-600: #005990;   /* hover */
+  --river-500: #0077C0;   /* garis aktif, fokus, ikon */
+  --river-200: #DDD9D3;   /* pinggir kartu (tint abu-cokelat) */
+  --river-100: #E6F1F8;   /* tint biru: latar pucat */
 
-  --uper-green: #C1D544;  /* hijau daun UPer — aksen institusional */
-  --wave-600: #00A5C4;    /* motif ombak/hidrograf, bukan teks */
-
-  --ink-900: #0E1B24;
-  --ink-700: #1E3542;
-  --ink-500: #4A6472;
-  --muted:   #6E848F;
-  --paper:   #F7FAFB;
+  --ink-900: #231F20;     /* teks utama, judul, footer */
+  --ink-700: #231F20;
+  --ink-500: #73675A;     /* teks sekunder */
+  --muted:   #73675A;     /* teks samar, metadata */
+  --paper:   #F2F2F2;     /* latar halaman */
   --surface: #ffffff;
-  --line:    #D7E1E4;
-  --line-soft: #E7EEF0;
+  --line:    #DDD9D3;
+  --line-soft: #ECEAE6;
 
   --radius: 3px;
   --maxw: 1180px;
@@ -62,7 +66,7 @@ a:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 main:focus { outline: none; }
 
 /* ---------------- Masthead ---------------- */
-.site-header { background: var(--river-900); color: #DCE9EE; }
+.site-header { background: var(--river-900); color: #E6F1F8; }
 .header-inner {
   display: flex; flex-wrap: wrap; align-items: center;
   justify-content: space-between; gap: 12px; padding: 16px 20px;
@@ -77,22 +81,22 @@ main:focus { outline: none; }
 }
 .brand-sub {
   font-family: var(--font-mono); font-size: 0.72rem;
-  color: #70BCEB; letter-spacing: 0.02em;
+  color: #E6F1F8; letter-spacing: 0.02em;
 }
 .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
 .site-nav a {
-  color: #A4CFEA; padding: 7px 12px; border-radius: var(--radius);
+  color: #E6F1F8; padding: 7px 12px; border-radius: var(--radius);
   font-size: 0.92rem; border-bottom: 2px solid transparent;
 }
 .site-nav a:hover { color: #fff; text-decoration: none; }
 .site-nav a.active { color: #fff; border-bottom-color: var(--river-500); }
 .site-nav .portal-link {
   margin-left: 10px; font-family: var(--font-mono); font-size: 0.8rem;
-  color: #91CAED; border: 1px solid #08639B; padding: 6px 10px;
+  color: #E6F1F8; border: 1px solid rgba(255, 255, 255, .35); padding: 6px 10px;
 }
 .site-nav .portal-link:hover { border-color: var(--river-500); color: #fff; }
 
-/* Garis hidrograf — motif air, memakai --wave-600 seperti portal */
+/* Garis hidrograf — motif air, biru UPer (dulu --wave-600; palet 2026-10-22) */
 .hydrograph { display: block; width: 100%; height: 26px; background: var(--river-900); }
 
 /* ---------------- Struktur konten ---------------- */
@@ -137,7 +141,6 @@ h2 { font-size: 1.4rem; margin: 2.2em 0 0.6em; }
   font-family: var(--font-mono); padding: 2px 10px;
   border-radius: var(--radius); background: var(--river-100); color: var(--river-800);
 }
-.badge.green { background: #F3F7DC; color: #5A6614; }
 
 /* ---------------- Grup anggota (collapsible) ---------------- */
 details.member-group {
@@ -223,7 +226,7 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 
 /* ---------------- Footer ---------------- */
 .site-footer {
-  background: var(--river-900); color: #A4CFEA;
+  background: var(--ink-900); color: #F2F2F2;
   margin-top: 40px; font-size: 0.88rem;
 }
 .footer-inner {
@@ -232,7 +235,7 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 }
 .footer-title { font-family: var(--font-display); font-weight: 600; color: #fff; margin-bottom: 6px; }
 .footer-line { margin-top: 2px; }
-.site-footer a { color: #91CAED; }
+.site-footer a { color: #FFFFFF; }
 .footer-meta { text-align: right; font-family: var(--font-mono); font-size: 0.78rem; }
 
 @media (max-width: 640px) {
@@ -244,7 +247,7 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 }
 
 /* ---------------- Aksen kartu (garis atas teal, seperti referensi) --------- */
-.card { border-top: 3px solid var(--wave-600); }
+.card { border-top: 3px solid var(--river-700); }
 
 /* ---------------- Metadata dataset & tombol unduh ---------------- */
 .dl-meta {
@@ -253,11 +256,11 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 }
 .dl-meta .k { color: var(--ink-500); }
 .btn-cta {
-  display: inline-block; background: #E8A33D; color: #3A2A08;
+  display: inline-block; background: var(--river-700); color: #fff;
   font-weight: 600; font-size: 0.88rem; padding: 8px 16px;
-  border-radius: var(--radius); border: 1px solid #C9862B;
+  border-radius: var(--radius); border: 1px solid var(--river-900);
 }
-.btn-cta:hover { background: #F0B355; color: #3A2A08; text-decoration: none; }
+.btn-cta:hover { background: var(--river-900); color: #fff; text-decoration: none; }
 .soon {
   display: inline-block; font-family: var(--font-mono);
   font-size: 0.78rem; color: var(--muted);
@@ -298,12 +301,12 @@ details.member-group .pub-list { margin-top: 8px; }
 .motto {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
   margin: 14px 0 20px; padding: 10px 0 10px 16px;
-  border-left: 3px solid var(--wave-600);
+  border-left: 3px solid var(--river-700);
   font-family: var(--font-display);
   font-size: 1.25rem; font-weight: 600;
   color: var(--river-800); letter-spacing: 0.01em;
 }
-.motto-sep { color: var(--wave-600); font-weight: 400; }
+.motto-sep { color: var(--river-700); font-weight: 400; }
 @media (max-width: 480px) {
   .motto { font-size: 1.05rem; gap: 8px; }
 }
@@ -335,7 +338,7 @@ h3.sub {
 
 /* Visi & misi */
 .visi {
-  border-left: 3px solid var(--wave-600); padding-left: 16px;
+  border-left: 3px solid var(--river-700); padding-left: 16px;
   font-size: 1.02rem; color: var(--ink-700); max-width: 68ch;
 }
 .misi { max-width: 68ch; padding-left: 20px; }
@@ -344,12 +347,12 @@ h3.sub {
 /* --- Slot iklan AdSense (page_utils.ad_slot) --- */
 .ad-slot {
   margin: 32px 0; padding: 8px 12px 12px;
-  background: #F2F2F2; border-radius: var(--radius);
+  background: var(--paper); border-radius: var(--radius);
 }
 .ad-label {
   font-family: var(--font-mono); font-size: 0.7rem;
   text-transform: uppercase; letter-spacing: 0.06em;
-  color: #73675A; margin-bottom: 6px;
+  color: var(--muted); margin-bottom: 6px;
 }
 
 /* --- Tautan halaman di footer (cfg.FOOTER_LINKS) --- */
