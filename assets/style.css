@@ -248,6 +248,31 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 .month-link:hover { background: var(--river-700); color: #fff; text-decoration: none; }
 .month-none { color: var(--muted); opacity: 0.55; }
 
+/* Form nama + afiliasi sebelum unduhan pertama (download-form.js) */
+.download-form {
+  width: min(440px, calc(100vw - 32px)); padding: 0;
+  border: 1px solid var(--line); border-top: 3px solid var(--river-700);
+  border-radius: var(--radius); background: var(--surface); color: var(--ink-900);
+}
+.download-form::backdrop { background: rgba(35, 31, 32, 0.55); }
+.download-form form { padding: 20px 22px; }
+.download-form h2 { margin: 0 0 6px; font-size: 1.2rem; }
+.download-form label { display: block; margin-top: 12px; font-weight: 600; font-size: 0.9rem; }
+.download-form input[type="text"] {
+  display: block; width: 100%; box-sizing: border-box; margin-top: 4px;
+  padding: 8px 10px; font: inherit; border: 1px solid var(--line); border-radius: var(--radius);
+}
+.download-form input[type="text"]:focus { outline: 2px solid var(--river-500); outline-offset: 0; }
+.download-form .consent { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; font-size: 0.85rem; }
+.download-form .consent input { margin-top: 3px; }
+.download-form .hp { position: absolute; left: -9999px; }
+.download-form .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+.download-form .btn-plain {
+  background: none; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 8px 14px; font: inherit; font-size: 0.88rem; cursor: pointer; color: var(--ink-900);
+}
+.download-form button.btn-cta { cursor: pointer; font-family: inherit; }
+
 /* ---------------- Footer ---------------- */
 .site-footer {
   background: var(--ink-900); color: #F2F2F2;
