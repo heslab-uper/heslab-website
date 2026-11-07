@@ -236,7 +236,6 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
   font-weight: 600; color: var(--river-700);
 }
 .year-item[open] > summary { border-bottom: 1px solid var(--line); }
-.year-item .doclink { display: inline-block; margin: 12px 12px 0; }
 .month-links {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
   gap: 6px; padding: 12px 12px 0;
