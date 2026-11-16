@@ -3,6 +3,34 @@
    jalan), .card[data-topik], section.artikel-bulan, details.artikel-tahun.
    Topik terpilih disimpan di alamat sebagai #topik=<kunci> agar bisa dibagikan.
    Tanpa JavaScript semua artikel tetap tampil. */
+/* Tombol "Salin alamat" umpan RSS (.salin-rss, hidden tanpa JS atau tanpa
+   clipboard API; alamatnya tetap terbaca sebagai teks). */
+(function () {
+  "use strict";
+  var btn = document.querySelector(".salin-rss");
+  if (!btn || !navigator.clipboard) return;
+  btn.hidden = false;
+  btn.addEventListener("click", function () {
+    navigator.clipboard.writeText(btn.getAttribute("data-salin")).then(function () {
+      btn.textContent = "Tersalin";
+      setTimeout(function () { btn.textContent = "Salin alamat"; }, 2000);
+    }, function () {
+      // Clipboard ditolak (izin browser): seleksi alamatnya agar bisa disalin manual.
+      var code = document.querySelector(".rss-alamat");
+      if (code && window.getSelection) {
+        var range = document.createRange();
+        range.selectNodeContents(code);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = "Tekan Ctrl+C";
+      } else {
+        btn.textContent = "Gagal menyalin";
+      }
+    });
+  });
+})();
+
 (function () {
   "use strict";
   var bar = document.querySelector(".artikel-saring");
