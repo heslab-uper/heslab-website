@@ -450,6 +450,14 @@ h3.sub {
 
 /* --- Artikel (build_page_artikel.py) --- */
 .artikel-meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); margin: -4px 0 14px; }
+/* Label topik di halaman artikel: tautan ke /artikel/#topik=<kunci> */
+.artikel-topik-baris { margin: -6px 0 14px; }
+a.badge { text-decoration: none; }
+a.badge:hover, a.badge:focus-visible { background: var(--river-800); color: #fff; }
+/* Artikel terkait di akhir artikel; kartu tanpa ringkasan agar ringkas */
+.artikel-terkait { margin-top: 2.5em; padding-top: 1.2em; border-top: 1px solid var(--line); }
+.artikel-terkait h3 { font-size: 1rem; }
+.artikel-rss { font-size: 0.88rem; color: var(--muted); margin-top: -6px; }
 .artikel-isi { max-width: 72ch; font-size: 1.02rem; line-height: 1.7; }
 .artikel-isi h2 { margin-top: 2em; }
 .artikel-isi h3 { margin-top: 1.6em; }
