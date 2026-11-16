@@ -167,6 +167,33 @@ details.member-group[open] > summary::after { transform: rotate(90deg); }
 details.member-group .group-body { padding: 4px 18px 18px; }
 details.member-group .card-grid { margin-top: 8px; }
 
+/* ---------------- Daftar artikel: per bulan + saring topik ----------------
+   (build_page_artikel.py, assets/artikel-saring.js; pemilik 2026-11-16) */
+.artikel-saring { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.saring-tombol {
+  font-family: var(--font-body); font-size: 0.88rem; cursor: pointer;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink-900);
+}
+.saring-tombol .count { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); }
+.saring-tombol:hover { border-color: var(--river-700); }
+.saring-tombol:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
+.saring-tombol[aria-pressed="true"] {
+  background: var(--river-700); border-color: var(--river-700); color: #fff;
+}
+.saring-tombol[aria-pressed="true"] .count { color: var(--river-100); }
+.artikel-bulan { margin-top: 28px; }
+.artikel-bulan-judul {
+  font-size: 1.15rem; margin: 0; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.artikel-bulan .card-grid { margin-top: 14px; }
+details.artikel-tahun { margin-top: 28px; }
+details.artikel-tahun .artikel-bulan:first-child { margin-top: 10px; }
+.card .artikel-topik { margin-bottom: 8px; }
+.artikel-kosong { margin-top: 20px; color: var(--muted); }
+.artikel-saring[hidden], .artikel-bulan[hidden], details.artikel-tahun[hidden],
+.card[hidden], .artikel-kosong[hidden] { display: none; }
+
 /* ---------------- Kartu anggota: foto + tautan profil ---------------- */
 .member-card { display: flex; align-items: flex-start; gap: 14px; }
 .member-body { min-width: 0; flex: 1; }
