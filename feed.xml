@@ -6,7 +6,15 @@
     <description>Tulisan HESLab tentang data hujan satelit, pemodelan hidrologi, dan pengolahan data.</description>
     <language>id</language>
     <atom:link href="https://heslab-uper.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Nov 2026 00:00:00 +0700</pubDate>
+    <pubDate>Wed, 18 Nov 2026 00:00:00 +0700</pubDate>
+    <item>
+      <title>Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan</title>
+      <link>https://heslab-uper.com/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/</link>
+      <guid isPermaLink="true">https://heslab-uper.com/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0700</pubDate>
+      <description>Tujuh banjir Pontianak dibaca dengan arsip GSMaP sejak 1998. Pada tiga banjir yang punya angka pos, hujannya 101 sampai 154 mm sehari, di atas 80 mm yang menurut BMKG sering memicu banjir. Satelit menangkap waktu hujan dengan baik, tetapi sering mencatat besarnya jauh lebih kecil, dan pasang Kapuas ikut memperparah sedikitnya dua banjir.</description>
+      <category>Kejadian banjir</category>
+    </item>
     <item>
       <title>Tanggul Cikalintu jebol, Bandung 16 November 2026: hujan sore di Cipaganti tidak lebat menurut satelit</title>
       <link>https://heslab-uper.com/artikel/banjir-bandung-cipaganti-november-2026/</link>
