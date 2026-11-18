@@ -6,7 +6,15 @@
     <description>Tulisan HESLab tentang data hujan satelit, pemodelan hidrologi, dan pengolahan data.</description>
     <language>id</language>
     <atom:link href="https://heslab-uper.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Nov 2026 00:00:00 +0700</pubDate>
+    <pubDate>Thu, 19 Nov 2026 00:00:00 +0700</pubDate>
+    <item>
+      <title>Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem</title>
+      <link>https://heslab-uper.com/artikel/banjir-kota-bengkulu-november-2026/</link>
+      <guid isPermaLink="true">https://heslab-uper.com/artikel/banjir-kota-bengkulu-november-2026/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0700</pubDate>
+      <description>Banjir merendam enam kecamatan Kota Bengkulu pada Selasa 17 November 2026. Menurut GSMaP, hujan Senin malam sampai Selasa siang berjumlah 40 sampai 78 mm, turun tanpa jeda lebih dari 15 jam dan ditutup hujan deras pada pagi hari. Hujan terlebat malam itu jatuh di pedalaman utara, di perbatasan Lebong dan Bengkulu Utara.</description>
+      <category>Kejadian banjir</category>
+    </item>
     <item>
       <title>Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan</title>
       <link>https://heslab-uper.com/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/</link>
