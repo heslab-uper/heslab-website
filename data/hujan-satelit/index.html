@@ -42,7 +42,8 @@ gtag('config', 'G-Z0TXGDFW5L');
         <span class="brand-sub">Hydro-Environmental System Lab</span>
       </span>
     </a>
-    <nav class="site-nav" aria-label="Navigasi utama">
+    <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu" hidden>☰</button>
+    <nav class="site-nav" id="menu-utama" aria-label="Navigasi utama">
       <a href="../../tentang/index.html">Tentang</a>
       <a href="../../riset/index.html">Riset</a>
       <a href="../../artikel/index.html">Artikel</a>
@@ -158,5 +159,21 @@ gtag('config', 'G-Z0TXGDFW5L');
   </div>
 </footer>
 
+<script>
+/* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
+(function () {
+  var header = document.querySelector('.site-header');
+  var tombol = document.querySelector('.nav-tombol');
+  if (!header || !tombol) return;
+  header.classList.add('nav-lipat');
+  tombol.hidden = false;
+  tombol.addEventListener('click', function () {
+    var buka = header.classList.toggle('terbuka');
+    tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+    tombol.textContent = buka ? '✕' : '☰';
+    tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+</script>
 </body>
 </html>

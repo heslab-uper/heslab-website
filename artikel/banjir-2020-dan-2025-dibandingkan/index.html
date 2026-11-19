@@ -65,7 +65,8 @@ gtag('config', 'G-Z0TXGDFW5L');
         <span class="brand-sub">Hydro-Environmental System Lab</span>
       </span>
     </a>
-    <nav class="site-nav" aria-label="Navigasi utama">
+    <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu" hidden>☰</button>
+    <nav class="site-nav" id="menu-utama" aria-label="Navigasi utama">
       <a href="../../tentang/index.html">Tentang</a>
       <a href="../../riset/index.html">Riset</a>
       <a href="../../artikel/index.html" class="active" aria-current="page">Artikel</a>
@@ -87,9 +88,8 @@ gtag('config', 'G-Z0TXGDFW5L');
 <p class="backlink"><a href="../index.html">← Artikel</a></p>
 <div class="eyebrow">Artikel</div>
 <h1>Banjir 2020 dan 2025: wilayah mana yang lebih parah</h1>
-<div class="artikel-meta">2026-11-09 · Nurul Fajar Januriyadi</div>
+<div class="artikel-meta"><time datetime="2026-11-09">9 November 2026</time> · Nurul Fajar Januriyadi</div>
 <p class="artikel-topik-baris"><a class="badge artikel-topik" href="../index.html#topik=banjir">Kejadian banjir</a></p>
-<p class="lead">Hujan 2020 lebih luas, hujan 2025 lebih deras di hulu. Perbandingan hujan, hidrograf, dan lama di atas awas untuk Ciliwung, Bekasi, Angke, dan Cisadane.</p>
 <article class="artikel-isi">
 <p>Banjir Tahun Baru 2020 dan banjir 4 Maret 2025 sama-sama melumpuhkan
 Jabodetabek. Bedanya ada pada tempat hujan jatuh. Pada 2020 hujan menyebar
@@ -258,11 +258,11 @@ Management</em>, 9(1), 38–53. https://doi.org/10.24815/ijdm.v9.i1.377</p>
 <h2>Artikel terkait</h2>
 <div class="card-grid"><div class="card"><img class="card-cover" src="../../media/artikel/banjir-kota-bengkulu-november-2026/hujan-jam-kota-bengkulu.png" alt="Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../banjir-kota-bengkulu-november-2026/index.html">Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem</a></h3>
-<div class="meta">2026-11-19</div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
+<div class="meta"><time datetime="2026-11-19">19 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../hujan-dan-banjir-kota-pontianak-2014-2026/index.html">Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan</a></h3>
-<div class="meta">2026-11-18</div></div><div class="card"><img class="card-cover" src="../../media/artikel/banjir-cimahi-kertasari-november-2026/hujan-jam-bandung-raya.png" alt="Banjir Cipageran dan Kertasari, 17–18 November 2026: hujan sore sedang di Bandung Raya, produk satelit bertentangan di Purwakarta" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
+<div class="meta"><time datetime="2026-11-18">18 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/banjir-cimahi-kertasari-november-2026/hujan-jam-bandung-raya.png" alt="Banjir Cipageran dan Kertasari, 17–18 November 2026: hujan sore sedang di Bandung Raya, produk satelit bertentangan di Purwakarta" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../banjir-cimahi-kertasari-november-2026/index.html">Banjir Cipageran dan Kertasari, 17–18 November 2026: hujan sore sedang di Bandung Raya, produk satelit bertentangan di Purwakarta</a></h3>
-<div class="meta">2026-11-18</div></div></div>
+<div class="meta"><time datetime="2026-11-18">18 November 2026</time></div></div></div>
 </section>
 
 </main>
@@ -287,5 +287,21 @@ Management</em>, 9(1), 38–53. https://doi.org/10.24815/ijdm.v9.i1.377</p>
   </div>
 </footer>
 
+<script>
+/* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
+(function () {
+  var header = document.querySelector('.site-header');
+  var tombol = document.querySelector('.nav-tombol');
+  if (!header || !tombol) return;
+  header.classList.add('nav-lipat');
+  tombol.hidden = false;
+  tombol.addEventListener('click', function () {
+    var buka = header.classList.toggle('terbuka');
+    tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+    tombol.textContent = buka ? '✕' : '☰';
+    tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+</script>
 </body>
 </html>

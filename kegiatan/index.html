@@ -42,7 +42,8 @@ gtag('config', 'G-Z0TXGDFW5L');
         <span class="brand-sub">Hydro-Environmental System Lab</span>
       </span>
     </a>
-    <nav class="site-nav" aria-label="Navigasi utama">
+    <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu" hidden>☰</button>
+    <nav class="site-nav" id="menu-utama" aria-label="Navigasi utama">
       <a href="../tentang/index.html">Tentang</a>
       <a href="../riset/index.html">Riset</a>
       <a href="../artikel/index.html">Artikel</a>
@@ -69,7 +70,7 @@ gtag('config', 'G-Z0TXGDFW5L');
 <div class="card">
   <img class="card-cover" src="../media/kegiatan/2026-07-18-survei-debit.jpg" alt="Dokumentasi: Survei Debit Sungai" loading="lazy">
   <h2>Survei Debit Sungai</h2>
-  <div class="meta">2026-07-18</div>
+  <div class="meta"><time datetime="2026-07-18">18 Juli 2026</time></div>
   <p>Survei debit sesaat dilakukan sebagai bagian dari penelitian DIKTI -Integrasi Data Satelit, Pemodelan Hidrologi, dan Machine Learning untuk Peringatan Dini Banjir JABODETABEK-. Data yang diperoleh dimanfaatkan untuk kalibrasi model hujan-limpasan dan peningkatan keandalan prediksi banjir.</p>
   
 </div>
@@ -98,5 +99,21 @@ gtag('config', 'G-Z0TXGDFW5L');
   </div>
 </footer>
 
+<script>
+/* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
+(function () {
+  var header = document.querySelector('.site-header');
+  var tombol = document.querySelector('.nav-tombol');
+  if (!header || !tombol) return;
+  header.classList.add('nav-lipat');
+  tombol.hidden = false;
+  tombol.addEventListener('click', function () {
+    var buka = header.classList.toggle('terbuka');
+    tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+    tombol.textContent = buka ? '✕' : '☰';
+    tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+</script>
 </body>
 </html>

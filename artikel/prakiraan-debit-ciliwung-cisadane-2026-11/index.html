@@ -65,7 +65,8 @@ gtag('config', 'G-Z0TXGDFW5L');
         <span class="brand-sub">Hydro-Environmental System Lab</span>
       </span>
     </a>
-    <nav class="site-nav" aria-label="Navigasi utama">
+    <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu" hidden>☰</button>
+    <nav class="site-nav" id="menu-utama" aria-label="Navigasi utama">
       <a href="../../tentang/index.html">Tentang</a>
       <a href="../../riset/index.html">Riset</a>
       <a href="../../artikel/index.html" class="active" aria-current="page">Artikel</a>
@@ -87,9 +88,8 @@ gtag('config', 'G-Z0TXGDFW5L');
 <p class="backlink"><a href="../index.html">← Artikel</a></p>
 <div class="eyebrow">Artikel</div>
 <h1>Prakiraan debit Ciliwung-Cisadane: kering sampai awal Desember, lalu berbalik</h1>
-<div class="artikel-meta">2026-11-14 · Nurul Fajar Januriyadi</div>
+<div class="artikel-meta"><time datetime="2026-11-14">14 November 2026</time> · Nurul Fajar Januriyadi</div>
 <p class="artikel-topik-baris"><a class="badge artikel-topik" href="../index.html#topik=debit">Prakiraan debit</a></p>
-<p class="lead">Setelah November yang sangat kering, semua ruas sungai WS Ciliwung-Cisadane Bawah Normal pada Nov II. Menurut 51 jejak SEAS5, lebih dari 80 % ruas berbalik Atas Normal mulai Des II; Cisadane paling lambat pulih.</p>
 <article class="artikel-isi">
 <p>Awal November 2026 di sekitar Jakarta masih sangat kering. Pada dasarian I
 November (1–10 November), hujan di Bogor, Depok, Jakarta, Tangerang, dan
@@ -327,11 +327,11 @@ dengan run SEAS5 Desember.</p>
 <h2>Artikel terkait</h2>
 <div class="card-grid"><div class="card"><img class="card-cover" src="../../media/artikel/banjir-kota-bengkulu-november-2026/hujan-jam-kota-bengkulu.png" alt="Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../banjir-kota-bengkulu-november-2026/index.html">Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem</a></h3>
-<div class="meta">2026-11-19</div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-harian-2026-11-19/peta-hujan-harian.png" alt="Hujan harian Indonesia, 19 November 2026: hujan lebat dini hari di Sumatera bagian tengah, produk satelit tidak sepakat" loading="lazy"><span class="badge artikel-topik">Hujan harian</span>
+<div class="meta"><time datetime="2026-11-19">19 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-harian-2026-11-19/peta-hujan-harian.png" alt="Hujan harian Indonesia, 19 November 2026: hujan lebat dini hari di Sumatera bagian tengah, produk satelit tidak sepakat" loading="lazy"><span class="badge artikel-topik">Hujan harian</span>
 <h3><a href="../hujan-harian-2026-11-19/index.html">Hujan harian Indonesia, 19 November 2026: hujan lebat dini hari di Sumatera bagian tengah, produk satelit tidak sepakat</a></h3>
-<div class="meta">2026-11-19</div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
+<div class="meta"><time datetime="2026-11-19">19 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../hujan-dan-banjir-kota-pontianak-2014-2026/index.html">Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan</a></h3>
-<div class="meta">2026-11-18</div></div></div>
+<div class="meta"><time datetime="2026-11-18">18 November 2026</time></div></div></div>
 </section>
 
 </main>
@@ -356,5 +356,21 @@ dengan run SEAS5 Desember.</p>
   </div>
 </footer>
 
+<script>
+/* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
+(function () {
+  var header = document.querySelector('.site-header');
+  var tombol = document.querySelector('.nav-tombol');
+  if (!header || !tombol) return;
+  header.classList.add('nav-lipat');
+  tombol.hidden = false;
+  tombol.addEventListener('click', function () {
+    var buka = header.classList.toggle('terbuka');
+    tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+    tombol.textContent = buka ? '✕' : '☰';
+    tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+</script>
 </body>
 </html>

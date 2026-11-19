@@ -96,6 +96,32 @@ main:focus { outline: none; }
 }
 .site-nav .portal-link:hover { border-color: var(--river-500); color: #fff; }
 
+/* Menu lipat di ponsel (pemilik 2026-11-19): tombol "Menu" hanya muncul bila
+   JavaScript jalan (base.html.j2 menghapus atribut hidden dan memberi kelas
+   nav-lipat); tanpa JavaScript menu tetap tampil terbuka seperti biasa. */
+.nav-tombol {
+  font: inherit; font-size: 1.25rem; line-height: 1;
+  color: #E6F1F8; background: transparent; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, .35); border-radius: var(--radius);
+  width: 42px; height: 40px; flex: 0 0 auto;
+}
+.nav-tombol:hover, .nav-tombol:focus-visible { border-color: var(--river-500); color: #fff; }
+@media (min-width: 761px) {
+  .nav-tombol { display: none; }
+}
+@media (max-width: 760px) {
+  .header-inner { padding: 12px 16px; flex-wrap: wrap; }
+  .brand { min-width: 0; flex: 1 1 auto; }
+  .brand-logo { height: 34px; }
+  .brand-name { font-size: 1.25rem; }
+  .brand-sub { font-size: 0.64rem; }
+  .nav-lipat .site-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; }
+  .nav-lipat.terbuka .site-nav { display: flex; }
+  .nav-lipat .site-nav a { padding: 10px 4px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .nav-lipat .site-nav a.active { border-bottom-color: var(--river-500); }
+  .nav-lipat .site-nav .portal-link { margin: 8px 0 4px; text-align: center; }
+}
+
 /* Garis hidrograf — motif air, biru UPer (dulu --wave-600; palet 2026-10-22) */
 .hydrograph { display: block; width: 100%; height: 26px; background: var(--river-900); }
 
@@ -212,10 +238,12 @@ details.artikel-tahun .artikel-bulan:first-child { margin-top: 10px; }
 
 /* ---------------- Kartu kegiatan: gambar sampul ---------------- */
 /* Selebar kartu (menembus padding 16px 18px), di bawah garis atas teal */
+/* contain, bukan cover (pemilik 2026-11-19): sampul artikel umumnya grafik atau
+   peta; gambar utuh di bingkai putih, tidak terpotong, tinggi kartu tetap sama. */
 .card-cover {
   display: block; width: calc(100% + 36px); max-width: none;
-  margin: -16px -18px 12px; aspect-ratio: 16 / 9; object-fit: cover;
-  background: var(--river-100);
+  margin: -16px -18px 12px; aspect-ratio: 16 / 9; object-fit: contain;
+  background: #fff; border-bottom: 1px solid var(--line);
 }
 
 /* ---------------- Daftar publikasi ---------------- */
@@ -235,19 +263,25 @@ details.artikel-tahun .artikel-bulan:first-child { margin-top: 10px; }
 /* ---------------- Statistik beranda ---------------- */
 /* Kisi, bukan flex: dengan 7 kotak (Artikel ditambah 2026-11-16) flex
    membungkus 5 + 2 dan dua kotak terakhir melebar; kisi menjaga lebar sama. */
+/* Pemilik 2026-11-19: empat kotak ringkas (angka dan label sebaris), satu baris di
+   layar lebar, 2 x 2 di ponsel, agar Artikel Terbaru cepat terlihat. */
 .stats {
-  display: grid; gap: 14px; margin-top: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: grid; gap: 10px; margin-top: 20px; max-width: 760px;
+  grid-template-columns: repeat(4, 1fr);
 }
 .stat {
   background: var(--surface);
   border: 1px solid var(--river-200); border-top: 3px solid var(--river-700);
-  border-radius: var(--radius); padding: 12px 16px;
+  border-radius: var(--radius); padding: 8px 12px;
+  display: flex; align-items: baseline; gap: 8px;
 }
-.stat .num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--river-800); }
+.stat .num { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--river-800); }
 .stat .label { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); }
+@media (max-width: 560px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
 /* Kotak yang bisa diklik (Artikel -> /artikel/; pemilik 2026-11-16) */
-a.stat-link { display: block; text-decoration: none; }
+a.stat-link { display: flex; text-decoration: none; }
 a.stat-link:hover { border-color: var(--river-700); }
 a.stat-link:hover .label { color: var(--river-700); }
 a.stat-link:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }

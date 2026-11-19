@@ -65,7 +65,8 @@ gtag('config', 'G-Z0TXGDFW5L');
         <span class="brand-sub">Hydro-Environmental System Lab</span>
       </span>
     </a>
-    <nav class="site-nav" aria-label="Navigasi utama">
+    <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama" aria-label="Buka menu" hidden>☰</button>
+    <nav class="site-nav" id="menu-utama" aria-label="Navigasi utama">
       <a href="../../tentang/index.html">Tentang</a>
       <a href="../../riset/index.html">Riset</a>
       <a href="../../artikel/index.html" class="active" aria-current="page">Artikel</a>
@@ -87,9 +88,8 @@ gtag('config', 'G-Z0TXGDFW5L');
 <p class="backlink"><a href="../index.html">← Artikel</a></p>
 <div class="eyebrow">Artikel</div>
 <h1>Banjir Cipageran dan Kertasari, 17–18 November 2026: hujan sore sedang di Bandung Raya, produk satelit bertentangan di Purwakarta</h1>
-<div class="artikel-meta">2026-11-18 · Nurul Fajar Januriyadi</div>
+<div class="artikel-meta"><time datetime="2026-11-18">18 November 2026</time> · Nurul Fajar Januriyadi</div>
 <p class="artikel-topik-baris"><a class="badge artikel-topik" href="../index.html#topik=banjir">Kejadian banjir</a></p>
-<p class="lead">Dua sore berturut-turut rumah di Cipageran, Cimahi Utara, kebanjiran, dan Rabu sore banjir lumpur menutup jalan di Kertasari. Menurut GSMaP, hujan di lokasi-lokasi itu sekitar 5 sampai 40 mm dalam empat jam. Hujan sangat lebat di Purwakarta hanya dilihat satu produk tiap sore, dan peringatan FEWS Citarum di sana pada Rabu petang tidak didukung NRT.</p>
 <article class="artikel-isi">
 <p>Dua sore berturut-turut, Selasa 17 dan Rabu 18 November 2026, hujan deras
 mengguyur Bandung Raya. Sebuah rumah di Cipageran, Cimahi Utara, kebanjiran
@@ -268,11 +268,11 @@ cepat perlu dibaca bersama produk lain sebelum disimpulkan.</p>
 <h2>Artikel terkait</h2>
 <div class="card-grid"><div class="card"><img class="card-cover" src="../../media/artikel/banjir-kota-bengkulu-november-2026/hujan-jam-kota-bengkulu.png" alt="Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../banjir-kota-bengkulu-november-2026/index.html">Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem</a></h3>
-<div class="meta">2026-11-19</div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
+<div class="meta"><time datetime="2026-11-19">19 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/hujan-dan-banjir-kota-pontianak-2014-2026/hujan-kejadian-pontianak.png" alt="Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../hujan-dan-banjir-kota-pontianak-2014-2026/index.html">Hujan dan banjir di Kota Pontianak 2014-2026: apa yang terbaca satelit dan pos hujan</a></h3>
-<div class="meta">2026-11-18</div></div><div class="card"><img class="card-cover" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" alt="Tanggul Cikalintu jebol, Bandung 16 November 2026: hujan sore di Cipaganti tidak lebat menurut satelit" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
+<div class="meta"><time datetime="2026-11-18">18 November 2026</time></div></div><div class="card"><img class="card-cover" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" alt="Tanggul Cikalintu jebol, Bandung 16 November 2026: hujan sore di Cipaganti tidak lebat menurut satelit" loading="lazy"><span class="badge artikel-topik">Kejadian banjir</span>
 <h3><a href="../banjir-bandung-cipaganti-november-2026/index.html">Tanggul Cikalintu jebol, Bandung 16 November 2026: hujan sore di Cipaganti tidak lebat menurut satelit</a></h3>
-<div class="meta">2026-11-17</div></div></div>
+<div class="meta"><time datetime="2026-11-17">17 November 2026</time></div></div></div>
 </section>
 
 </main>
@@ -297,5 +297,21 @@ cepat perlu dibaca bersama produk lain sebelum disimpulkan.</p>
   </div>
 </footer>
 
+<script>
+/* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
+(function () {
+  var header = document.querySelector('.site-header');
+  var tombol = document.querySelector('.nav-tombol');
+  if (!header || !tombol) return;
+  header.classList.add('nav-lipat');
+  tombol.hidden = false;
+  tombol.addEventListener('click', function () {
+    var buka = header.classList.toggle('terbuka');
+    tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+    tombol.textContent = buka ? '✕' : '☰';
+    tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+</script>
 </body>
 </html>
