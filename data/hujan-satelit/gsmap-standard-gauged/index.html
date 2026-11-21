@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-19">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-21">
 <link rel="icon" href="../../../assets/img/uper-lambang.png">
 <link rel="alternate" type="application/rss+xml" title="Artikel HESLab" href="https://heslab-uper.com/feed.xml">
 <script type="application/ld+json">{
@@ -162,7 +162,7 @@ Standard yang dikoreksi dengan data penakar hujan permukaan. Produk ini
 terbit sekitar <strong>3 hari</strong> setelah pengamatan dan menjadi pilihan utama
 bila akurasi lebih penting daripada kecepatan, misalnya untuk kalibrasi
 model hidrologi, analisis frekuensi hujan, dan kajian jangka panjang.</p>
-<h2>Ringkasan produk</h2>
+<h2 id="ringkasan-produk">Ringkasan produk</h2>
 <div class="table-wrap"><table class="data">
 <thead>
 <tr>
@@ -197,7 +197,7 @@ model hidrologi, analisis frekuensi hujan, dan kajian jangka panjang.</p>
 </tr>
 </tbody>
 </table></div>
-<h2>Bagaimana koreksinya bekerja</h2>
+<h2 id="bagaimana-koreksinya-bekerja">Bagaimana koreksinya bekerja</h2>
 <p>JAXA menyesuaikan taksiran satelit per jam dengan <em>CPC Unified Gauge-Based
 Analysis of Global Daily Precipitation</em>, yaitu analisis curah hujan harian
 global dari data penakar hujan yang disusun NOAA <em>Climate Prediction
@@ -212,7 +212,7 @@ Center</em>. Rincian metodenya ada di dokumen algoritma JAXA
 <li>Data CPC, dan karena itu GSMaP_Gauge, tidak selalu akurat di wilayah yang
   penakar hujannya jarang.</li>
 </ul>
-<h2>Versi yang tersedia</h2>
+<h2 id="versi-yang-tersedia">Versi yang tersedia</h2>
 <div class="table-wrap"><table class="data">
 <thead>
 <tr>
@@ -254,7 +254,7 @@ koreksi penakar hujan pada versi 7 dikurangi di versi 8, dan versi 9
 memperbaiki lagi artefak koreksi yang tidak alami. Untuk deret waktu
 panjang yang konsisten, <strong>v8</strong> adalah pilihan yang tersedia saat ini di
 HESLab.</p>
-<h2>Seberapa besar pengaruh koreksi?</h2>
+<h2 id="seberapa-besar-pengaruh-koreksi">Seberapa besar pengaruh koreksi?</h2>
 <p>Dalam validasi awal JAXA terhadap data radar yang dikoreksi penakar hujan
 <strong>di daratan Jepang</strong> (April–November 2014), produk Gauge memberi galat
 yang lebih kecil daripada produk Standard tanpa koreksi:</p>
@@ -271,31 +271,31 @@ yang lebih kecil daripada produk Standard tanpa koreksi:</p>
 <tbody>
 <tr>
 <td>v6</td>
-<td>0,345</td>
-<td>0,246</td>
-<td>0,573</td>
-<td>0,710</td>
+<td class="angka">0,345</td>
+<td class="angka">0,246</td>
+<td class="angka">0,573</td>
+<td class="angka">0,710</td>
 </tr>
 <tr>
 <td>v7</td>
-<td>0,371</td>
-<td>0,240</td>
-<td>0,594</td>
-<td>0,707</td>
+<td class="angka">0,371</td>
+<td class="angka">0,240</td>
+<td class="angka">0,594</td>
+<td class="angka">0,707</td>
 </tr>
 <tr>
 <td>v8</td>
-<td>0,348</td>
-<td>0,241</td>
-<td>0,605</td>
-<td>0,696</td>
+<td class="angka">0,348</td>
+<td class="angka">0,241</td>
+<td class="angka">0,605</td>
+<td class="angka">0,696</td>
 </tr>
 </tbody>
 </table></div>
 <p>Angka ini <strong>bukan</strong> ukuran akurasi di Indonesia. Karena mutu koreksi
 bergantung pada data CPC, manfaatnya di Indonesia bergantung pada
 kerapatan penakar hujan dalam data CPC di wilayah kajian Anda.</p>
-<h2>Kapan memakai Standard gauged</h2>
+<h2 id="kapan-memakai-standard-gauged">Kapan memakai Standard gauged</h2>
 <ul>
 <li><strong>Kalibrasi dan validasi model hidrologi</strong>, dengan satu versi untuk
   seluruh periode kalibrasi dan simulasi.</li>
@@ -308,7 +308,7 @@ kerapatan penakar hujan dalam data CPC di wilayah kajian Anda.</p>
 ingat bahwa pos tersebut mungkin sudah termasuk dalam data CPC, sehingga
 pembandingnya tidak sepenuhnya independen. Untuk validasi yang bebas dari
 pengaruh penakar, gunakan <a href="../gsmap-standard/index.html">GSMaP Standard</a>.</p>
-<h2>Berkas dan cara membacanya</h2>
+<h2 id="berkas-dan-cara-membacanya">Berkas dan cara membacanya</h2>
 <p>Struktur berkas, zona waktu, dan contoh kode Python dijelaskan di halaman
 <a href="../format-berkas-gsmap/index.html">Format berkas GSMaP HESLab</a>. Untuk
 membandingkan dengan produk lain, baca
@@ -691,7 +691,7 @@ data, sesuai <a href="../../../kebijakan-privasi/index.html" target="_blank" rel
         <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
       </div>
       <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
-      <div class="footer-line">Diperbarui 2026-11-19</div>
+      <div class="footer-line">Diperbarui 2026-11-21</div>
     </div>
   </div>
 </footer>

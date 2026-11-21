@@ -156,6 +156,15 @@ h2 { font-size: 1.4rem; margin: 2.2em 0 0.6em; }
 .card .links { display: flex; flex-wrap: wrap; gap: 6px; }
 .card .meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); margin-bottom: 8px; }
 .card p { margin: 0; font-size: 0.92rem; }
+/* Kartu artikel (pemilik 2026-11-21): ringkasan dipotong 3 baris dan "Baca →"
+   di dasar kartu, sehingga kartu satu baris sama rapi. Ringkasan lengkap tetap
+   di meta description untuk mesin pencari. */
+.card:has(> .ringkasan) { display: flex; flex-direction: column; align-items: flex-start; }
+.card > .ringkasan {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  line-clamp: 3; overflow: hidden; margin-bottom: 10px;
+}
+.card:has(> .ringkasan) > .doclink { margin-top: auto; }
 .card .doclink {
   display: inline-block; margin-top: 10px; font-family: var(--font-mono);
   font-size: 0.78rem; border: 1px solid var(--river-200);
@@ -294,6 +303,16 @@ table.data th { background: var(--river-100); font-family: var(--font-display); 
 /* Tabel dari Markdown: tabel lebar digulir di dalam pembungkus, halaman tidak ikut melebar */
 .table-wrap { overflow-x: auto; margin-top: 16px; }
 .table-wrap > table.data { margin-top: 0; }
+/* Sel angka dari Markdown (markdown_utils.NUMBER_CELL, pemilik 2026-11-21):
+   rata kanan, tidak dipotong; di ponsel kolom pertama tetap terlihat saat digeser. */
+table.data td.angka { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  table.data th, table.data td { padding: 6px 8px; }
+  .table-wrap table.data tr > :first-child {
+    position: sticky; left: 0; z-index: 1; background: var(--surface);
+  }
+  .table-wrap table.data thead tr > :first-child { background: var(--river-100); }
+}
 .note { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
 
 /* Unduh per bulan: tahun dibuka untuk menampilkan bulannya */
@@ -501,6 +520,15 @@ a.badge:hover, a.badge:focus-visible { background: var(--river-800); color: #fff
 .artikel-isi { max-width: 72ch; font-size: 1.02rem; line-height: 1.7; }
 .artikel-isi h2 { margin-top: 2em; }
 .artikel-isi h3 { margin-top: 1.6em; }
+/* Daftar isi lipat (markdown_utils.table_of_contents, pemilik 2026-11-21) */
+.daftar-isi {
+  margin: 4px 0 24px; padding: 10px 16px; background: var(--surface);
+  border: 1px solid var(--river-200); border-radius: var(--radius); font-size: 0.95rem;
+}
+.daftar-isi summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.82rem; color: var(--river-700); }
+.daftar-isi ol { margin: 10px 0 2px; padding-left: 1.4em; }
+.daftar-isi li { margin: 3px 0; }
+.artikel-isi h2[id] { scroll-margin-top: 16px; }
 .artikel-isi figure { margin: 24px 0; }
 .artikel-isi img { max-width: 100%; height: auto; border-radius: var(--radius); }
 .artikel-isi figcaption { font-size: 0.85rem; color: var(--ink-500); margin-top: 6px; }

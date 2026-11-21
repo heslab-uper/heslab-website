@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=2026-11-19">
+<link rel="stylesheet" href="../../assets/style.css?v=2026-11-21">
 <link rel="icon" href="../../assets/img/uper-lambang.png">
 <link rel="alternate" type="application/rss+xml" title="Artikel HESLab" href="https://heslab-uper.com/feed.xml">
 <script type="application/ld+json">{
@@ -91,13 +91,14 @@ gtag('config', 'G-Z0TXGDFW5L');
 <div class="artikel-meta"><time datetime="2026-11-09">9 November 2026</time> · Nurul Fajar Januriyadi</div>
 <p class="artikel-topik-baris"><a class="badge artikel-topik" href="../index.html#topik=banjir">Kejadian banjir</a></p>
 <article class="artikel-isi">
+<details class="daftar-isi"><summary>Daftar isi</summary><ol><li><a href="#apa-yang-tercatat-saat-itu">Apa yang tercatat saat itu</a></li><li><a href="#apa-kata-model">Apa kata model</a></li><li><a href="#bisakah-diperingatkan-lebih-awal">Bisakah diperingatkan lebih awal?</a></li><li><a href="#batasan">Batasan</a></li><li><a href="#rujukan">Rujukan</a></li></ol></details>
 <p>Pada 3 sampai 4 Maret 2025, banjir besar melanda Bogor, Jakarta, dan terutama
 Bekasi. Tulisan ini menapak tilas kejadian itu dari dua sisi: berita dan
 catatan resmi saat itu, serta simulasi model HESLab untuk seluruh Wilayah
 Sungai (WS) Ciliwung-Cisadane. Fokusnya sistem sungai Ciliwung, Bekasi, dan
 Angke.</p>
 <figure><img alt="Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025." loading="lazy" src="../../media/artikel/napak-tilas-banjir-maret-2025/hidrograf_2025.png" /><figcaption>Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025.</figcaption></figure>
-<h2>Apa yang tercatat saat itu</h2>
+<h2 id="apa-yang-tercatat-saat-itu">Apa yang tercatat saat itu</h2>
 <p>BMKG mencatat hujan lebih dari 110 mm per hari di Kota Bogor dan hampir
 208 mm per hari di Sumur Batu, Bekasi; hujan lokal di Bekasi berkisar 165
 sampai 208 mm per hari. BMKG menyebut pertumbuhan awan konvektif skala meso
@@ -139,7 +140,7 @@ Kota Bekasi terdampak. Di Ciliwung, Bendung Katulampa mencapai 150 cm pada
 Banjir berlangsung 2 sampai 6 Maret dengan sedikitnya 9 korban jiwa dan lebih
 dari 90.000 orang mengungsi
 (<a href="https://en.wikipedia.org/wiki/2025_Jakarta_floods" rel="noopener" target="_blank">Wikipedia</a>).</p>
-<h2>Apa kata model</h2>
+<h2 id="apa-kata-model">Apa kata model</h2>
 <p>Model HESLab adalah model hujan-limpasan UPerRRM (Universitas Pertamina
 Rainfall-Runoff Model) yang dijalankan untuk 1641 subDAS di WS
 Ciliwung-Cisadane, dengan hujan satelit GSMaP Standard v8 per jam. Untuk WS
@@ -160,35 +161,35 @@ perbandingan antarwilayah.</p>
 <tbody>
 <tr>
 <td>Ciliwung (Katulampa)</td>
-<td>151 km²</td>
-<td>202 mm</td>
-<td>556 m³/s</td>
+<td class="angka">151 km²</td>
+<td class="angka">202 mm</td>
+<td class="angka">556 m³/s</td>
 <td>3 Mar 23:00</td>
-<td>76 %</td>
+<td class="angka">76 %</td>
 </tr>
 <tr>
 <td>Ciliwung (Manggarai)</td>
-<td>317 km²</td>
-<td>208 mm</td>
-<td>1923 m³/s</td>
+<td class="angka">317 km²</td>
+<td class="angka">208 mm</td>
+<td class="angka">1923 m³/s</td>
 <td>4 Mar 02:00</td>
-<td>88 %</td>
+<td class="angka">88 %</td>
 </tr>
 <tr>
 <td>Bekasi (Kali Bekasi)</td>
-<td>401 km²</td>
-<td>259 mm</td>
-<td>2941 m³/s</td>
+<td class="angka">401 km²</td>
+<td class="angka">259 mm</td>
+<td class="angka">2941 m³/s</td>
 <td>4 Mar 02:00</td>
-<td>100 %</td>
+<td class="angka">100 %</td>
 </tr>
 <tr>
 <td>Angke (hilir)</td>
-<td>244 km²</td>
-<td>150 mm</td>
-<td>1535 m³/s</td>
+<td class="angka">244 km²</td>
+<td class="angka">150 mm</td>
+<td class="angka">1535 m³/s</td>
 <td>4 Mar 03:00</td>
-<td>100 %</td>
+<td class="angka">100 %</td>
 </tr>
 </tbody>
 </table></div>
@@ -212,7 +213,7 @@ Bekasi yang tercatat pukul 06:30. Debit puncak model (2941 m³/s) juga jauh di
 atas sekitar 1.100 m³/s yang dilaporkan di Bendung Bekasi. Hal ini sesuai
 dengan status model yang belum dikalibrasi, dan menjadi alasan HESLab
 mengumpulkan data debit lapangan.</p>
-<h2>Bisakah diperingatkan lebih awal?</h2>
+<h2 id="bisakah-diperingatkan-lebih-awal">Bisakah diperingatkan lebih awal?</h2>
 <p>Kejadian yang sama sudah diuji untuk peringatan dini di DAS Bekasi. Dengan
 hujan GSMaP waktu-nyata (NOW dan NRT) dan UPerRRM yang berjalan terus, debit
 simulasi menangkap waktu mulai dan naiknya banjir. Ambang Siaga 1 di pos
@@ -220,7 +221,7 @@ Cileungsi terdeteksi sekitar satu jam lebih awal, dan deteksi hujan di hulu
 memberi waktu lima sampai enam jam sebelum banjir di hilir (Januriyadi dkk.,
 2026). Catatan lapangan menunjukkan rentang waktu yang serupa: Cileungsi siaga
 1 pukul 23:00, sedangkan Kali Bekasi baru mencapai puncaknya pukul 06:30.</p>
-<h2>Batasan</h2>
+<h2 id="batasan">Batasan</h2>
 <ul>
 <li>Hujan satelit adalah rerata kotak sekitar 10 km dan dapat berbeda dari
   pos hujan.</li>
@@ -233,7 +234,7 @@ memberi waktu lima sampai enam jam sebelum banjir di hilir (Januriyadi dkk.,
 <a href="https://portal.heslab-uper.com/historis/ciliwung-cisadane/" rel="noopener" target="_blank">Historis WS Ciliwung-Cisadane</a>.
 Perbandingan dengan banjir Tahun Baru 2020 ada di tulisan
 <a href="../banjir-2020-dan-2025-dibandingkan/index.html">Banjir 2020 dan 2025 dibandingkan</a>.</p>
-<h2>Rujukan</h2>
+<h2 id="rujukan">Rujukan</h2>
 <p>Januriyadi, N. F., Moe, I. R., Cikmit, A. A., &amp; Sejati, W. (2026).
 Utilization of realtime GSMaP satellite data for flood early warning in
 Bekasi watershed using UPerRRM. <em>International Journal of Disaster
@@ -268,7 +269,7 @@ Management</em>, 9(1), 38–53. https://doi.org/10.24815/ijdm.v9.i1.377</p>
         <a href="../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
       </div>
       <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
-      <div class="footer-line">Diperbarui 2026-11-19</div>
+      <div class="footer-line">Diperbarui 2026-11-21</div>
     </div>
   </div>
 </footer>

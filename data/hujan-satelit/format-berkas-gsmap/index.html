@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-19">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-21">
 <link rel="icon" href="../../../assets/img/uper-lambang.png">
 <link rel="alternate" type="application/rss+xml" title="Artikel HESLab" href="https://heslab-uper.com/feed.xml">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8857637749916805" crossorigin="anonymous"></script>
@@ -71,7 +71,7 @@ gtag('config', 'G-Z0TXGDFW5L');
 Standard <em>gauged</em>) disediakan dalam berkas NetCDF dengan struktur yang
 sama. Halaman ini menjelaskan isi berkas tersebut, beberapa hal yang sering
 menimbulkan kesalahan, dan contoh cara membacanya dengan Python.</p>
-<h2>Isi berkas</h2>
+<h2 id="isi-berkas">Isi berkas</h2>
 <p>Setiap berkas berisi <strong>satu bulan</strong> data hujan per jam untuk wilayah
 Indonesia dan sekitarnya.</p>
 <div class="table-wrap"><table class="data">
@@ -153,7 +153,7 @@ bulan UTC, disimpan di folder per tahun:</p>
 <p><code>nga</code> berarti tanpa koreksi penakar hujan, <code>ga</code> dengan koreksi. Versi lain
 mengganti <code>v8</code> dan <code>V8</code>, misalnya <code>gsmap_std_v6_ga_200003.nc</code> di
 <code>STD/V6/GA/NC/2000/</code>.</p>
-<h2>Hal yang perlu diperhatikan</h2>
+<h2 id="hal-yang-perlu-diperhatikan">Hal yang perlu diperhatikan</h2>
 <ol>
 <li><strong>Waktu dalam UTC, menandai awal jam.</strong> Nilai berstempel 00:00 UTC
    adalah hujan selama 00:00–01:00 UTC, yaitu 07:00–08:00 WIB. Sebelum
@@ -176,7 +176,7 @@ mengganti <code>v8</code> dan <code>V8</code>, misalnya <code>gsmap_std_v6_ga_20
    0,099991). Gunakan pencarian sel terdekat (<code>method="nearest"</code>), bukan
    pencocokan nilai persis.</li>
 </ol>
-<h2>Contoh membaca data dengan Python</h2>
+<h2 id="contoh-membaca-data-dengan-python">Contoh membaca data dengan Python</h2>
 <p>Contoh berikut memakai pustaka <code>xarray</code>. Ganti nama berkas dengan berkas
 yang Anda unduh.</p>
 <pre><code class="language-python">import numpy as np
@@ -201,7 +201,7 @@ DAS), potong grid dengan batas wilayahnya lalu hitung rata-rata sel di
 dalamnya. Untuk ekstraksi per wilayah dan visualisasi tanpa menulis kode,
 gunakan <strong>gsmap-explorer</strong> (lihat bagian Sitasi &amp; Pengolahan Data di
 bawah).</p>
-<h2>Produk yang memakai format ini</h2>
+<h2 id="produk-yang-memakai-format-ini">Produk yang memakai format ini</h2>
 <ul>
 <li><a href="../gsmap-now/index.html">GSMaP NOW</a></li>
 <li><a href="../gsmap-nrt/index.html">GSMaP NRT</a></li>
@@ -253,7 +253,7 @@ bawah).</p>
         <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
       </div>
       <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
-      <div class="footer-line">Diperbarui 2026-11-19</div>
+      <div class="footer-line">Diperbarui 2026-11-21</div>
     </div>
   </div>
 </footer>
