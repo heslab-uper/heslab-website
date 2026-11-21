@@ -6,7 +6,15 @@
     <description>Tulisan HESLab tentang data hujan satelit, pemodelan hidrologi, dan pengolahan data.</description>
     <language>id</language>
     <atom:link href="https://heslab-uper.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Nov 2026 00:00:00 +0700</pubDate>
+    <pubDate>Sat, 21 Nov 2026 00:00:00 +0700</pubDate>
+    <item>
+      <title>Survei hidrometri Sungai Angke dan Sungai Bekasi, 15 November 2026: debit terukur dan perkiraan kapasitas tanggul</title>
+      <link>https://heslab-uper.com/artikel/survei-hidrometri-angke-bekasi-november-2026/</link>
+      <guid isPermaLink="true">https://heslab-uper.com/artikel/survei-hidrometri-angke-bekasi-november-2026/</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0700</pubDate>
+      <description>Tim HESLab mengukur debit Sungai Angke (3,9 m³/dt) dan Sungai Bekasi (16,8 m³/dt) pada 15 November 2026. Dari pengukuran ini disusun perkiraan awal kapasitas penuh tanggul: sekitar 100 m³/dt di Angke dan 900–1.000 m³/dt di Bekasi.</description>
+      <category>Metode &amp; data</category>
+    </item>
     <item>
       <title>Banjir Kota Bengkulu, 17 November 2026: hujan semalam suntuk, bukan satu hujan ekstrem</title>
       <link>https://heslab-uper.com/artikel/banjir-kota-bengkulu-november-2026/</link>
