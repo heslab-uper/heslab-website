@@ -1,4 +1,4 @@
-/* Saring daftar artikel menurut topik (halaman /artikel/; pemilik 2026-11-16).
+/* Saring daftar artikel menurut topik dan kata kunci (halaman /artikel/; pemilik 2026-11-16, cari 2026-11-22).
    Markup dari build_page_artikel.py: .artikel-saring (hidden sampai skrip ini
    jalan), .card[data-topik], section.artikel-bulan, details.artikel-tahun.
    Topik terpilih disimpan di alamat sebagai #topik=<kunci> agar bisa dibagikan.
@@ -33,35 +33,59 @@
 
 (function () {
   "use strict";
+  // Topik (tombol, #topik=<kunci>) dan kata kunci (kotak .artikel-cari,
+  // pemilik 2026-11-22, C2) disaring bersama: kartu tampil bila cocok keduanya.
+  // Kata kunci: semua kata harus ada di teks kartu (judul, topik, tanggal,
+  // penulis, ringkasan); huruf besar-kecil dan aksen diabaikan ("nino" = "Niño").
   var bar = document.querySelector(".artikel-saring");
-  if (!bar) return;
-  var buttons = Array.prototype.slice.call(bar.querySelectorAll(".saring-tombol"));
-  var known = buttons.map(function (b) { return b.getAttribute("data-topik"); });
+  var cariBox = document.querySelector(".artikel-cari");
+  var cariInput = cariBox && cariBox.querySelector("input");
   var cards = Array.prototype.slice.call(document.querySelectorAll(".card[data-topik]"));
+  if (!cards.length || (!bar && !cariInput)) return;
+  var buttons = bar ? Array.prototype.slice.call(bar.querySelectorAll(".saring-tombol")) : [];
+  var known = buttons.map(function (b) { return b.getAttribute("data-topik"); });
   var months = Array.prototype.slice.call(document.querySelectorAll("section.artikel-bulan"));
   var years = Array.prototype.slice.call(document.querySelectorAll("details.artikel-tahun"));
   var empty = document.querySelector(".artikel-kosong");
+  var emptyTopik = empty ? empty.textContent : "";
+
+  function normal(s) {
+    s = String(s || "").toLowerCase();
+    if (s.normalize) s = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    return s.replace(/\s+/g, " ").trim();
+  }
+  var teks = cards.map(function (c) { return normal(c.textContent); });
+  var topikNow = "", kataNow = [];
 
   function visibleCards(root) {
     return Array.prototype.filter.call(root.querySelectorAll(".card[data-topik]"),
       function (c) { return !c.hidden; }).length;
   }
 
-  function apply(topik) {
+  function apply() {
     buttons.forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-topik") === topik ? "true" : "false");
+      b.setAttribute("aria-pressed", b.getAttribute("data-topik") === topikNow ? "true" : "false");
     });
-    cards.forEach(function (c) {
-      c.hidden = topik !== "" && c.getAttribute("data-topik") !== topik;
+    cards.forEach(function (c, i) {
+      var okTopik = topikNow === "" || c.getAttribute("data-topik") === topikNow;
+      var okKata = kataNow.every(function (k) { return teks[i].indexOf(k) >= 0; });
+      c.hidden = !(okTopik && okKata);
     });
     months.forEach(function (s) { s.hidden = visibleCards(s) === 0; });
     years.forEach(function (d) {
       var n = visibleCards(d);
       d.hidden = n === 0;
+      if (kataNow.length && n) d.open = true;      // hasil cari di arsip tahun langsung terlihat
       var count = d.querySelector("summary .count");
       if (count) count.textContent = n + " artikel";
     });
-    if (empty) empty.hidden = cards.some(function (c) { return !c.hidden; });
+    if (empty) {
+      empty.hidden = cards.some(function (c) { return !c.hidden; });
+      empty.textContent = kataNow.length
+        ? "Tidak ada artikel yang cocok dengan “" + cariInput.value.trim() + "”" +
+          (topikNow ? " pada topik ini." : ".")
+        : emptyTopik;
+    }
   }
 
   function fromHash() {
@@ -71,14 +95,22 @@
 
   buttons.forEach(function (b) {
     b.addEventListener("click", function () {
-      var topik = b.getAttribute("data-topik");
-      apply(topik);
-      var url = window.location.pathname + window.location.search + (topik ? "#topik=" + topik : "");
+      topikNow = b.getAttribute("data-topik");
+      apply();
+      var url = window.location.pathname + window.location.search + (topikNow ? "#topik=" + topikNow : "");
       if (window.history && window.history.replaceState) window.history.replaceState(null, "", url);
     });
   });
-  window.addEventListener("hashchange", function () { apply(fromHash()); });
+  window.addEventListener("hashchange", function () { topikNow = fromHash(); apply(); });
 
-  bar.hidden = false;
-  apply(fromHash());
+  if (cariInput) {
+    cariInput.addEventListener("input", function () {
+      kataNow = normal(cariInput.value).split(" ").filter(Boolean);
+      apply();
+    });
+    cariBox.hidden = false;
+  }
+  if (bar) bar.hidden = false;
+  topikNow = fromHash();
+  apply();
 })();

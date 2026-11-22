@@ -205,6 +205,19 @@ details.member-group .card-grid { margin-top: 8px; }
 /* ---------------- Daftar artikel: per bulan + saring topik ----------------
    (build_page_artikel.py, assets/artikel-saring.js; pemilik 2026-11-16) */
 .artikel-saring { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+/* Cari artikel (pemilik 2026-11-22, C2; artikel-saring.js) */
+.artikel-cari { margin-top: 18px; max-width: 28rem; }
+.artikel-cari[hidden] { display: none; }
+.artikel-cari label {
+  display: block; margin-bottom: 4px; font-family: var(--font-mono); font-size: 0.74rem;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+}
+.artikel-cari input {
+  width: 100%; box-sizing: border-box; font-family: var(--font-body); font-size: 0.95rem;
+  padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink-900);
+}
+.artikel-cari input:focus-visible { outline: 2px solid var(--river-500); outline-offset: 1px; }
 .saring-tombol {
   font-family: var(--font-body); font-size: 0.88rem; cursor: pointer;
   padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--radius);
@@ -606,6 +619,9 @@ html.lightbox-buka { overflow: hidden; }
     grid-column: 1 / -1; margin: 10px 0 0; -webkit-line-clamp: 2; line-clamp: 2;
   }
   .card:has(> .card-cover):has(> .ringkasan) > .doclink { display: none; }
+  /* display: grid di atas lebih kuat dari .card[hidden] { display: none }: tanpa baris
+     ini kartu yang disaring topik/cari tetap tampil di ponsel (ditemukan 2026-11-22) */
+  .card:has(> .card-cover):has(> .ringkasan)[hidden] { display: none; }
 }
 
 /* A2: tombol kembali ke atas (templates/base.html.j2) */
