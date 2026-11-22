@@ -6,7 +6,15 @@
     <description>Tulisan HESLab tentang data hujan satelit, pemodelan hidrologi, dan pengolahan data.</description>
     <language>id</language>
     <atom:link href="https://heslab-uper.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2026 00:00:00 +0700</pubDate>
+    <pubDate>Sun, 22 Nov 2026 00:00:00 +0700</pubDate>
+    <item>
+      <title>Satu kabupaten, lima angka hujan: mengapa produk satelit GSMaP bisa berbeda</title>
+      <link>https://heslab-uper.com/artikel/satu-kabupaten-lima-angka-hujan/</link>
+      <guid isPermaLink="true">https://heslab-uper.com/artikel/satu-kabupaten-lima-angka-hujan/</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 +0700</pubDate>
+      <description>Pada 17 November 2026 di Kota Banjarmasin, GSMaP NOW mencatat 2,3 mm sementara GSMaP NRT v8 mencatat 153 mm. Dari 516 kabupaten/kota selama lima hari, tiga produk GSMaP hanya sepakat soal kelas hujan pada sekitar separuh kasus. Ini cara membaca perbedaannya.</description>
+      <category>Metode &amp; data</category>
+    </item>
     <item>
       <title>Survei hidrometri Sungai Angke dan Sungai Bekasi, 15 November 2026: debit terukur dan perkiraan kapasitas tanggul</title>
       <link>https://heslab-uper.com/artikel/survei-hidrometri-angke-bekasi-november-2026/</link>
@@ -158,14 +166,6 @@
       <pubDate>Thu, 22 Oct 2026 00:00:00 +0700</pubDate>
       <description>Prakiraan ECMWF SEAS5 Oktober 2026 untuk Niño3.4 dan DMI dibaca bersama data hujan satelit GSMaP: mengapa kebakaran masih berlanjut di Sumatera bagian selatan dan Kalimantan, sementara hujan mulai turun di Sumatera bagian utara dan Kalimantan Barat.</description>
       <category>Iklim &amp; ENSO</category>
-    </item>
-    <item>
-      <title>Survei debit sesaat untuk kalibrasi model banjir</title>
-      <link>https://heslab-uper.com/artikel/survei-debit-sesaat/</link>
-      <guid isPermaLink="true">https://heslab-uper.com/artikel/survei-debit-sesaat/</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0700</pubDate>
-      <description>Cara tim HESLab mengukur debit sungai secara langsung dan mengapa data ini penting untuk mengkalibrasi model hujan-limpasan peringatan dini banjir JABODETABEK.</description>
-      <category>Metode &amp; data</category>
     </item>
   </channel>
 </rss>
