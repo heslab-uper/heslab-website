@@ -649,6 +649,12 @@ html.lightbox-buka { overflow: hidden; }
 .bagikan-tombol:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 .bagikan-tombol[hidden] { display: none; }
 
+/* Istilah di artikel yang ditaut otomatis ke Glosarium (pemilik 2026-11-22, E5):
+   warna teks biasa + garis titik-titik, agar tidak terbaca sebagai tautan keluar. */
+a.istilah { color: inherit; text-decoration: underline dotted var(--river-600);
+  text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a.istilah:hover { color: var(--river-700); text-decoration-style: solid; }
+
 /* E1 Glosarium (build_page_glosarium.py, pemilik 2026-11-22) */
 .glosarium-lompat {
   display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 8px;
