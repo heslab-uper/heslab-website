@@ -26,6 +26,20 @@
     });
   }
 
+  // "Salin kutipan" di bagian Cara mengutip (D5, 2026-11-22)
+  var kutip = document.querySelector(".kutip-salin");
+  if (kutip && navigator.clipboard) {
+    kutip.hidden = false;
+    kutip.addEventListener("click", function () {
+      navigator.clipboard.writeText(kutip.getAttribute("data-salin")).then(function () {
+        kutip.textContent = "Tersalin";
+      }, function () {
+        window.prompt("Salin kutipan:", kutip.getAttribute("data-salin"));
+      });
+      setTimeout(function () { kutip.textContent = "Salin kutipan"; }, 2000);
+    });
+  }
+
   var lain = box.querySelector(".bagikan-lain");
   if (lain && navigator.share) {
     lain.hidden = false;

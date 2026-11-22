@@ -648,3 +648,16 @@ html.lightbox-buka { overflow: hidden; }
 .bagikan-tombol:hover { border-color: var(--river-700); color: var(--ink-900); }
 .bagikan-tombol:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 .bagikan-tombol[hidden] { display: none; }
+
+/* D4 Tentang penulis, D5 Cara mengutip (build_page_artikel.py, pemilik 2026-11-22) */
+.penulis, .kutip {
+  max-width: 72ch; margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--line);
+}
+.penulis h2, .kutip h2 { font-size: 1.05rem; margin: 0 0 12px; }
+.penulis .member-card { margin-top: 10px; }
+.penulis-tim { margin: 10px 0 0; font-size: 0.88rem; }
+.kutip-teks {
+  font-size: 0.9rem; line-height: 1.6; margin: 0 0 10px; padding: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow-wrap: anywhere;
+}
