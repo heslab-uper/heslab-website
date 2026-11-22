@@ -510,7 +510,11 @@ a.badge:hover, a.badge:focus-visible { background: var(--river-800); color: #fff
 /* Artikel terkait di akhir artikel; kartu tanpa ringkasan agar ringkas */
 .artikel-terkait { margin-top: 2.5em; padding-top: 1.2em; border-top: 1px solid var(--line); }
 .artikel-terkait h3 { font-size: 1rem; }
-.artikel-rss { font-size: 0.88rem; color: var(--muted); margin-top: -6px; }
+/* Di bawah daftar artikel sejak 2026-11-22 (B3), dipisah garis tipis */
+.artikel-rss {
+  font-size: 0.88rem; color: var(--muted);
+  margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--line);
+}
 .artikel-rss .rss-alamat { overflow-wrap: anywhere; }
 .salin-rss {
   font: inherit; font-size: 0.8rem; padding: 1px 10px; cursor: pointer;
