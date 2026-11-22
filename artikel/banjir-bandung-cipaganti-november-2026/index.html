@@ -100,7 +100,7 @@ GSMaP yang terbit cepat (NOW, NRT v8, dan NRT v9). Ketiganya sepakat bahwa
 hujan turun sekitar pukul 15.00 sampai 19.00 WIB. Namun di sekitar
 Cipaganti hujannya tidak lebat. Hujan lebat sore itu jatuh di Kabupaten
 Bandung bagian selatan.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan per jam Senin 16 November 2026 di piksel GSMaP yang memuat Cipaganti dan rata-rata 3 × 3 piksel di sekitarnya, menurut tiga produk GSMaP." loading="lazy" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" /></a><figcaption>Hujan per jam Senin 16 November 2026 di piksel GSMaP yang memuat Cipaganti dan rata-rata 3 × 3 piksel di sekitarnya, menurut tiga produk GSMaP.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan per jam Senin 16 November 2026 di piksel GSMaP yang memuat Cipaganti dan rata-rata 3 × 3 piksel di sekitarnya, menurut tiga produk GSMaP." loading="lazy" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/hujan-jam-cipaganti.png" /></a><figcaption>Hujan per jam Senin 16 November 2026 di piksel GSMaP yang memuat Cipaganti dan rata-rata 3 × 3 piksel di sekitarnya, menurut tiga produk GSMaP.</figcaption></figure>
 <h2 id="apa-yang-tercatat-di-lapangan">Apa yang tercatat di lapangan</h2>
 <p>Senin sore, aliran Sungai Cikalintu tersumbat sampah dan batang pohon yang
 terbawa dari hulu, lalu tanggulnya jebol. Tanggul itu sedang diperbaiki dan
@@ -170,7 +170,7 @@ piksel itu.</p>
 dan selatan Cimahi, mencatat hujan lebih deras. Pada jam yang berakhir
 pukul 17.00, NOW mencatat 21 mm, NRT v9 17 mm, dan NRT v8 7 mm. Piksel ini
 tidak berada di hulu Cikalintu.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-bandung-cipaganti-november-2026/peta-hujan-sore-16-november.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan empat jam, 15.00 sampai 19.00 WIB Senin 16 November 2026, per piksel GSMaP di Bandung Raya, menurut tiga produk. Bintang menandai Cipaganti." loading="lazy" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/peta-hujan-sore-16-november.png" /></a><figcaption>Hujan empat jam, 15.00 sampai 19.00 WIB Senin 16 November 2026, per piksel GSMaP di Bandung Raya, menurut tiga produk. Bintang menandai Cipaganti.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-bandung-cipaganti-november-2026/peta-hujan-sore-16-november.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan empat jam, 15.00 sampai 19.00 WIB Senin 16 November 2026, per piksel GSMaP di Bandung Raya, menurut tiga produk. Bintang menandai Cipaganti." loading="lazy" src="../../media/artikel/banjir-bandung-cipaganti-november-2026/peta-hujan-sore-16-november.png" /></a><figcaption>Hujan empat jam, 15.00 sampai 19.00 WIB Senin 16 November 2026, per piksel GSMaP di Bandung Raya, menurut tiga produk. Bintang menandai Cipaganti.</figcaption></figure>
 <p>Peta empat jam memperlihatkan inti hujan sore itu. Hujan 40 sampai
 100 mm dalam empat jam jatuh di Kabupaten Bandung bagian selatan dan barat
 daya. Di piksel Cipaganti, hujan empat jam itu kurang dari 10 mm: 0,6 mm
@@ -277,6 +277,49 @@ Untuk memastikannya dibutuhkan data pos hujan di Bandung utara.</p>
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

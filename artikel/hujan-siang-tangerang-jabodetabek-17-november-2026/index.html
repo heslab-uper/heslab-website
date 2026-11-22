@@ -101,7 +101,7 @@ hujan turun serentak pada pukul 13.00 sampai 14.00 WIB di Tangerang,
 Tangerang Selatan, Jakarta bagian barat dan selatan, serta Depok. Waktunya
 cocok dengan berita. Besarnya berbeda jauh antarproduk di Kabupaten
 Tangerang.</p>
-<figure><a class="perbesar" href="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/hujan-jam-tangerang.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan per jam rata-rata wilayah di Kota Tangerang, Kabupaten Tangerang, Tangerang Selatan, dan Jakarta Barat, Selasa 17 November 2026 sampai pukul 15.00 WIB, menurut tiga produk GSMaP. Jam ditulis sebagai jam berakhir." loading="lazy" src="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/hujan-jam-tangerang.png" /></a><figcaption>Hujan per jam rata-rata wilayah di Kota Tangerang, Kabupaten Tangerang, Tangerang Selatan, dan Jakarta Barat, Selasa 17 November 2026 sampai pukul 15.00 WIB, menurut tiga produk GSMaP. Jam ditulis sebagai jam berakhir.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/hujan-jam-tangerang.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan per jam rata-rata wilayah di Kota Tangerang, Kabupaten Tangerang, Tangerang Selatan, dan Jakarta Barat, Selasa 17 November 2026 sampai pukul 15.00 WIB, menurut tiga produk GSMaP. Jam ditulis sebagai jam berakhir." loading="lazy" src="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/hujan-jam-tangerang.png" /></a><figcaption>Hujan per jam rata-rata wilayah di Kota Tangerang, Kabupaten Tangerang, Tangerang Selatan, dan Jakarta Barat, Selasa 17 November 2026 sampai pukul 15.00 WIB, menurut tiga produk GSMaP. Jam ditulis sebagai jam berakhir.</figcaption></figure>
 <h2 id="apa-yang-tercatat-di-lapangan">Apa yang tercatat di lapangan</h2>
 <ul>
 <li>Sekitar pukul 12.10 WIB, hujan deras dan angin kencang terpantau di Tol
@@ -212,7 +212,7 @@ termasuk pada paruh kedua tiap jam yang tidak masuk arsip jam-jaman. NOW
 baru mencatat hujan mulai pukul 14.30, rata-rata sekitar 1 mm per jam
 dan paling besar 3 mm per jam. Jadi NOW mencatat hujan siang itu sekitar
 satu jam lebih lambat dan jauh lebih kecil daripada NRT.</p>
-<figure><a class="perbesar" href="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/peta-hujan-siang-17-november.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan tiga jam, 12.00 sampai 15.00 WIB Selasa 17 November 2026, per piksel GSMaP di Jabodetabek, menurut tiga produk. Garis tebal adalah batas kabupaten/kota Jabodetabek." loading="lazy" src="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/peta-hujan-siang-17-november.png" /></a><figcaption>Hujan tiga jam, 12.00 sampai 15.00 WIB Selasa 17 November 2026, per piksel GSMaP di Jabodetabek, menurut tiga produk. Garis tebal adalah batas kabupaten/kota Jabodetabek.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/peta-hujan-siang-17-november.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan tiga jam, 12.00 sampai 15.00 WIB Selasa 17 November 2026, per piksel GSMaP di Jabodetabek, menurut tiga produk. Garis tebal adalah batas kabupaten/kota Jabodetabek." loading="lazy" src="../../media/artikel/hujan-siang-tangerang-jabodetabek-17-november-2026/peta-hujan-siang-17-november.png" /></a><figcaption>Hujan tiga jam, 12.00 sampai 15.00 WIB Selasa 17 November 2026, per piksel GSMaP di Jabodetabek, menurut tiga produk. Garis tebal adalah batas kabupaten/kota Jabodetabek.</figcaption></figure>
 <h2 id="batasan">Batasan</h2>
 <ul>
 <li>Nilai adalah hujan per piksel 0,1° (sekitar 11 km) atau rata-rata
@@ -308,6 +308,49 @@ satu jam lebih lambat dan jauh lebih kecil daripada NRT.</p>
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

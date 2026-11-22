@@ -97,7 +97,7 @@ Bekasi. Tulisan ini menapak tilas kejadian itu dari dua sisi: berita dan
 catatan resmi saat itu, serta simulasi model HESLab untuk seluruh Wilayah
 Sungai (WS) Ciliwung-Cisadane. Fokusnya sistem sungai Ciliwung, Bekasi, dan
 Angke.</p>
-<figure><a class="perbesar" href="../../media/artikel/napak-tilas-banjir-maret-2025/hidrograf_2025.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025." loading="lazy" src="../../media/artikel/napak-tilas-banjir-maret-2025/hidrograf_2025.png" /></a><figcaption>Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/napak-tilas-banjir-maret-2025/hidrograf_2025.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025." loading="lazy" src="../../media/artikel/napak-tilas-banjir-maret-2025/hidrograf_2025.png" /></a><figcaption>Hujan rerata DAS hulu dan debit simulasi di empat titik kunci, 3 sampai 5 Maret 2025.</figcaption></figure>
 <h2 id="apa-yang-tercatat-saat-itu">Apa yang tercatat saat itu</h2>
 <p>BMKG mencatat hujan lebih dari 110 mm per hari di Kota Bogor dan hampir
 208 mm per hari di Sumur Batu, Bekasi; hujan lokal di Bekasi berkisar 165
@@ -311,6 +311,49 @@ Management</em>, 9(1), 38–53. https://doi.org/10.24815/ijdm.v9.i1.377</p>
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

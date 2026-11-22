@@ -102,7 +102,7 @@ beberapa hari kemudian. Empat produk sepakat bahwa hujan turun deras
 sejak lewat tengah malam sampai pagi, dengan inti terlebat di selatan
 Tasikmalaya dan Pangandaran. GSMaP NOW baru mencatatnya beberapa jam
 kemudian.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/hujan-harian-tasikmalaya.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan harian Kabupaten Tasikmalaya dan Pangandaran per hari laporan, 9 sampai 15 November 2026, menurut lima produk GSMaP. Kolom berwarna menandai hari bencana yang diberitakan." loading="lazy" src="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/hujan-harian-tasikmalaya.png" /></a><figcaption>Hujan harian Kabupaten Tasikmalaya dan Pangandaran per hari laporan, 9 sampai 15 November 2026, menurut lima produk GSMaP. Kolom berwarna menandai hari bencana yang diberitakan.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/hujan-harian-tasikmalaya.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan harian Kabupaten Tasikmalaya dan Pangandaran per hari laporan, 9 sampai 15 November 2026, menurut lima produk GSMaP. Kolom berwarna menandai hari bencana yang diberitakan." loading="lazy" src="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/hujan-harian-tasikmalaya.png" /></a><figcaption>Hujan harian Kabupaten Tasikmalaya dan Pangandaran per hari laporan, 9 sampai 15 November 2026, menurut lima produk GSMaP. Kolom berwarna menandai hari bencana yang diberitakan.</figcaption></figure>
 <h2 id="apa-yang-tercatat-di-lapangan">Apa yang tercatat di lapangan</h2>
 <p>Hujan deras turun hampir semalaman sejak Jumat malam, 13 November
 (<a href="https://kapol.id/diguyur-hujan-semalaman-luapan-sungai-citoe-rendam-jalan-raya-dan-persawahan-di-cipatujah/" rel="noopener" target="_blank">Kapol.id</a>).
@@ -206,7 +206,7 @@ Jam-jam terderas menurut NOW baru datang pukul 08.00 dan 09.00, 18 dan
 Total NOW sampai pukul 12.00 adalah 53 mm. Pergeseran waktu seperti ini
 juga terlihat pada
 <a href="../banjir-medan-oktober-november-2026/index.html">banjir Medan 5 November</a>.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/peta-hujan-14-november.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Peta hujan 24 jam per piksel lima produk GSMaP untuk hari laporan 14 November 2026 (08.00 WIB 13 November sampai 07.00 WIB 14 November)." loading="lazy" src="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/peta-hujan-14-november.png" /></a><figcaption>Peta hujan 24 jam per piksel lima produk GSMaP untuk hari laporan 14 November 2026 (08.00 WIB 13 November sampai 07.00 WIB 14 November).</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/peta-hujan-14-november.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Peta hujan 24 jam per piksel lima produk GSMaP untuk hari laporan 14 November 2026 (08.00 WIB 13 November sampai 07.00 WIB 14 November)." loading="lazy" src="../../media/artikel/banjir-longsor-tasikmalaya-november-2026/peta-hujan-14-november.png" /></a><figcaption>Peta hujan 24 jam per piksel lima produk GSMaP untuk hari laporan 14 November 2026 (08.00 WIB 13 November sampai 07.00 WIB 14 November).</figcaption></figure>
 <p>Peta memperlihatkan bahwa hujan terlebat jatuh di jalur selatan, dari
 Kabupaten Tasikmalaya bagian selatan sampai Pangandaran, sedangkan bagian
 utara, termasuk Kota Tasikmalaya, jauh lebih ringan. Di dalam Kabupaten
@@ -355,6 +355,49 @@ dimodelkan. Penjelasan perbedaan antarproduk GSMaP ada di halaman
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

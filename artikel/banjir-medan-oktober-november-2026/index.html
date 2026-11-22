@@ -100,7 +100,7 @@ kedua kejadian itu dengan tiga produk satelit GSMaP yang terbit cepat (NOW,
 NRT v8, dan NRT v9). Hasilnya kontras: banjir 5–6 November didahului hujan
 lebat yang tercatat jelas oleh ketiga produk, sedangkan hujan penyebab banjir
 28 Oktober yang lebih parah hampir tidak terlihat sama sekali.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-medan-oktober-november-2026/hujan-harian-medan.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan harian Kota Medan dan Deli Serdang per hari laporan, 27 Oktober sampai 15 November 2026, menurut tiga produk GSMaP. Kolom berwarna menandai hari banjir yang diberitakan." loading="lazy" src="../../media/artikel/banjir-medan-oktober-november-2026/hujan-harian-medan.png" /></a><figcaption>Hujan harian Kota Medan dan Deli Serdang per hari laporan, 27 Oktober sampai 15 November 2026, menurut tiga produk GSMaP. Kolom berwarna menandai hari banjir yang diberitakan.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-medan-oktober-november-2026/hujan-harian-medan.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan harian Kota Medan dan Deli Serdang per hari laporan, 27 Oktober sampai 15 November 2026, menurut tiga produk GSMaP. Kolom berwarna menandai hari banjir yang diberitakan." loading="lazy" src="../../media/artikel/banjir-medan-oktober-november-2026/hujan-harian-medan.png" /></a><figcaption>Hujan harian Kota Medan dan Deli Serdang per hari laporan, 27 Oktober sampai 15 November 2026, menurut tiga produk GSMaP. Kolom berwarna menandai hari banjir yang diberitakan.</figcaption></figure>
 <h2 id="apa-yang-tercatat-di-lapangan">Apa yang tercatat di lapangan</h2>
 <h3>28–29 Oktober: banjir luapan sungai</h3>
 <p>Menurut pemberitaan, hujan turun di Medan sejak Rabu sore atau malam,
@@ -269,7 +269,7 @@ jumlah 31 sampai 38 mm di Kota Medan dan 27 sampai 50 mm di Deli Serdang
 sampai tengah hari. Ini sesuai dengan sungai yang naik dan air di Sampali
 sejak pukul 06.00. Serdang Bedagai kembali menerima paling banyak, 35 sampai
 104 mm.</p>
-<figure><a class="perbesar" href="../../media/artikel/banjir-medan-oktober-november-2026/peta-hujan-dua-kejadian.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Peta hujan 24 jam per piksel GSMaP NOW, NRT v8, dan NRT v9: hari laporan 29 Oktober (atas) dan 5 November pukul 00.00 sampai 24.00 WIB (bawah)." loading="lazy" src="../../media/artikel/banjir-medan-oktober-november-2026/peta-hujan-dua-kejadian.png" /></a><figcaption>Peta hujan 24 jam per piksel GSMaP NOW, NRT v8, dan NRT v9: hari laporan 29 Oktober (atas) dan 5 November pukul 00.00 sampai 24.00 WIB (bawah).</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/banjir-medan-oktober-november-2026/peta-hujan-dua-kejadian.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Peta hujan 24 jam per piksel GSMaP NOW, NRT v8, dan NRT v9: hari laporan 29 Oktober (atas) dan 5 November pukul 00.00 sampai 24.00 WIB (bawah)." loading="lazy" src="../../media/artikel/banjir-medan-oktober-november-2026/peta-hujan-dua-kejadian.png" /></a><figcaption>Peta hujan 24 jam per piksel GSMaP NOW, NRT v8, dan NRT v9: hari laporan 29 Oktober (atas) dan 5 November pukul 00.00 sampai 24.00 WIB (bawah).</figcaption></figure>
 <p>Peta baris bawah memperlihatkan perbedaan letak inti hujan. NOW menaruh inti
 hujan sangat lebat sampai ekstrem di perbatasan Binjai, Deli Serdang, dan
 Langkat. NRT v8 menaruhnya lebih ke timur, di Deli Serdang bagian timur dan
@@ -403,6 +403,49 @@ perbedaan antarproduk GSMaP ada di halaman
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

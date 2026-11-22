@@ -98,7 +98,7 @@ Sungai Angke sebagai bagian dari penelitian DIKTI <em>Integrasi Data Satelit,
 Pemodelan Hidrologi, dan Machine Learning untuk Peringatan Dini Banjir
 JABODETABEK</em>. Hasilnya dipakai untuk mengkalibrasi model hujan-limpasan.
 Tulisan ini menyajikan hasil pengukuran di Sungai Angke.</p>
-<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/alat-ukur-arus.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Alat ukur arus yang digantung dari jembatan ke dalam aliran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/alat-ukur-arus.png" /></a><figcaption>Alat ukur arus yang digantung dari jembatan ke dalam aliran.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/alat-ukur-arus.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Alat ukur arus yang digantung dari jembatan ke dalam aliran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/alat-ukur-arus.png" /></a><figcaption>Alat ukur arus yang digantung dari jembatan ke dalam aliran.</figcaption></figure>
 <h2 id="apa-itu-debit-sesaat">Apa itu debit sesaat?</h2>
 <p>Debit adalah volume air yang mengalir melewati suatu penampang sungai per
 satuan waktu, biasanya dalam meter kubik per detik (m³/s). Disebut
@@ -123,13 +123,13 @@ kecepatan arus di titik tersebut.</p>
 1,5 m. Pada tiap vertikal, kecepatan diukur di dua titik, yaitu pada 0,2
 dan 0,8 kali kedalaman dari muka air, lalu dirata-ratakan. Vertikal yang
 dangkal (kedalaman 0,34 m) diukur di satu titik, pada 0,6 kali kedalaman.</p>
-<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/peralatan.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Peralatan survei: alat ukur arus, pemberat, dan winch dirakit sebelum pengukuran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/peralatan.png" /></a><figcaption>Peralatan survei: alat ukur arus, pemberat, dan winch dirakit sebelum pengukuran.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/peralatan.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Peralatan survei: alat ukur arus, pemberat, dan winch dirakit sebelum pengukuran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/peralatan.png" /></a><figcaption>Peralatan survei: alat ukur arus, pemberat, dan winch dirakit sebelum pengukuran.</figcaption></figure>
 <h2 id="penampang-sungai-angke">Penampang Sungai Angke</h2>
 <p>Di lokasi pengukuran, Sungai Angke berpenampang trapesium dengan lebar
 atas sekitar 25 m dan tinggi tebing sekitar 5,5 m. Saat survei, lebar muka
 airnya 15 m dengan kedalaman terbesar 0,9 m.</p>
-<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/saluran.jpg" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Sungai Angke di lokasi pengukuran saat musim kemarau." loading="lazy" src="../../media/artikel/survei-debit-sesaat/saluran.jpg" /></a><figcaption>Sungai Angke di lokasi pengukuran saat musim kemarau.</figcaption></figure>
-<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/penampang-angke.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Sketsa penampang Sungai Angke di lokasi pengukuran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/penampang-angke.png" /></a><figcaption>Sketsa penampang Sungai Angke di lokasi pengukuran.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/saluran.jpg" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Sungai Angke di lokasi pengukuran saat musim kemarau." loading="lazy" src="../../media/artikel/survei-debit-sesaat/saluran.jpg" /></a><figcaption>Sungai Angke di lokasi pengukuran saat musim kemarau.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/survei-debit-sesaat/penampang-angke.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Sketsa penampang Sungai Angke di lokasi pengukuran." loading="lazy" src="../../media/artikel/survei-debit-sesaat/penampang-angke.png" /></a><figcaption>Sketsa penampang Sungai Angke di lokasi pengukuran.</figcaption></figure>
 <h2 id="hasil">Hasil</h2>
 <div class="table-wrap"><table class="data">
 <thead>
@@ -332,6 +332,49 @@ ini.</p>
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>

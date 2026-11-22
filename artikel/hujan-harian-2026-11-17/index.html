@@ -95,7 +95,7 @@ gtag('config', 'G-Z0TXGDFW5L');
 <p>Pada Selasa, 17 November 2026, BNPB melaporkan banjir dan abrasi di Kabupaten Seluma, Bengkulu, serta banjir bandang di Kecamatan Pinoh Selatan, Kabupaten Melawi, Kalimantan Barat, yang berdampak pada 178 KK (<a href="https://nasional.kontan.co.id/news/update-bencana-17-november-2026-ratusan-kk-terdampak-banjir-di-kalbar-dan-bengkulu" rel="noopener" target="_blank">Kontan</a>). Di Kota Bengkulu, polisi dan Dinas PUPR memantau titik banjir dan longsor di enam kelurahan pada siang hari yang sama; longsor di Sumur Dewa merusak enam rumah, dan sebagian genangan sudah surut (<a href="https://dutametro.com/17/11/2026/polsek-selebar-bersama-dinas-pupr-pantau-sejumlah-titik-banjir-dan-longsor-pastikan-debit-air-mulai-surut/dutametro/" rel="noopener" target="_blank">Dutametro</a>). Apa kata satelit tentang hujan sehari sebelumnya?</p>
 <h2 id="sebaran-hujan-17-november-2026">Sebaran hujan 17 November 2026</h2>
 <p>Hari laporan 17 November 2026 adalah pukul 08.00 WIB Senin, 16 November 2026 sampai 07.00 WIB Selasa, 17 November 2026, seperti di <a href="https://portal.heslab-uper.com/rainfall/" rel="noopener" target="_blank">HESLab Portal</a>. Hujan dirata-ratakan per kabupaten/kota (516 wilayah) dari produk satelit cepat GSMaP: GSMaP NRT v8, GSMaP NRT v9, GSMaP NOW.</p>
-<figure><a class="perbesar" href="../../media/artikel/hujan-harian-2026-11-17/peta-hujan-harian.png" rel="noopener" target="_blank" title="Buka gambar ukuran penuh"><img alt="Hujan hari laporan 17 November 2026 per kabupaten/kota menurut GSMaP NRT v8." loading="lazy" src="../../media/artikel/hujan-harian-2026-11-17/peta-hujan-harian.png" /></a><figcaption>Hujan hari laporan 17 November 2026 per kabupaten/kota menurut GSMaP NRT v8.</figcaption></figure>
+<figure><a class="perbesar" href="../../media/artikel/hujan-harian-2026-11-17/peta-hujan-harian.png" rel="noopener" target="_blank" title="Perbesar gambar"><img alt="Hujan hari laporan 17 November 2026 per kabupaten/kota menurut GSMaP NRT v8." loading="lazy" src="../../media/artikel/hujan-harian-2026-11-17/peta-hujan-harian.png" /></a><figcaption>Hujan hari laporan 17 November 2026 per kabupaten/kota menurut GSMaP NRT v8.</figcaption></figure>
 <div class="table-wrap"><table class="data">
 <thead>
 <tr>
@@ -454,6 +454,49 @@ gtag('config', 'G-Z0TXGDFW5L');
     var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
+})();
+/* Gambar diperbesar sebagai pop-up di atas halaman (pemilik 2026-11-22):
+   klik gambar (a.perbesar dari markdown_utils) -> <dialog> berisi gambar dan
+   keterangannya; klik di mana pun selain gambar, tombol ✕, atau Esc menutupnya
+   dan halaman tetap di tempatnya. Tanpa JavaScript atau tanpa dukungan
+   <dialog>, tautan tetap membuka gambar di tab baru. */
+(function () {
+  var links = document.querySelectorAll('a.perbesar');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'lightbox';
+  dlg.setAttribute('aria-label', 'Gambar diperbesar');
+  dlg.innerHTML = '<button type="button" class="lightbox-tutup" aria-label="Tutup gambar">✕</button>' +
+                  '<figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var kecil = a.querySelector('img');
+      var fig = a.closest('figure');
+      var teks = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+      img.src = a.getAttribute('href');
+      img.alt = kecil ? kecil.alt : '';
+      cap.textContent = teks;
+      cap.hidden = !teks;
+      document.documentElement.classList.add('lightbox-buka');   // halaman di belakang tidak ikut bergulir
+      dlg.showModal();
+    });
+  });
+  // Kunci gulir dilepas langsung di sini, tidak hanya lewat event 'close'
+  // (event itu tidak selalu terpicu: teruji di pratinjau 2026-11-22, halaman
+  // tetap tidak bisa digulir setelah pop-up ditutup).
+  function tutup() {
+    if (dlg.open) dlg.close();
+    document.documentElement.classList.remove('lightbox-buka');
+    img.removeAttribute('src');
+  }
+  dlg.addEventListener('click', function (e) { if (e.target !== img) tutup(); });
+  dlg.addEventListener('cancel', function (e) { e.preventDefault(); tutup(); });   // Esc
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dlg.open) tutup(); });
+  dlg.addEventListener('close', tutup);
 })();
 </script>
 </body>
