@@ -649,6 +649,26 @@ html.lightbox-buka { overflow: hidden; }
 .bagikan-tombol:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
 .bagikan-tombol[hidden] { display: none; }
 
+/* E1 Glosarium (build_page_glosarium.py, pemilik 2026-11-22) */
+.glosarium-lompat {
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 8px;
+  font-family: var(--font-mono); font-size: 0.9rem;
+}
+.glosarium-lompat a {
+  display: inline-block; min-width: 2em; text-align: center; padding: 4px 8px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  text-decoration: none;
+}
+.glosarium-huruf { max-width: 72ch; margin-top: 24px; }
+.glosarium-huruf h2 {
+  font-size: 1.15rem; margin: 0; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.glosarium { margin: 0; }
+.glosarium dt { font-weight: 600; margin-top: 16px; scroll-margin-top: 16px; }
+.glosarium dd { margin: 4px 0 0; line-height: 1.65; }
+.glosarium dt:target { color: var(--river-700); }
+.glosarium-tautan { white-space: nowrap; font-size: 0.88rem; margin-left: 4px; }
+
 /* D4 Tentang penulis, D5 Cara mengutip (build_page_artikel.py, pemilik 2026-11-22) */
 .penulis, .kutip {
   max-width: 72ch; margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--line);
