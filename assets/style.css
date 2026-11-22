@@ -580,6 +580,30 @@ dialog.lightbox figcaption[hidden] { display: none; }
 .lightbox-tutup:hover, .lightbox-tutup:focus-visible { background: rgba(255, 255, 255, 0.3); }
 html.lightbox-buka { overflow: hidden; }
 
+/* B2: kartu artikel ringkas di ponsel (daftar artikel dan beranda; kartu yang
+   punya sampul DAN ringkasan, jadi bukan kartu kegiatan atau artikel terkait).
+   Sampul jadi gambar kecil di kiri, tetap utuh (contain, keputusan 2026-11-19);
+   ringkasan 2 baris; "Baca →" disembunyikan karena judul sudah menaut ke artikel. */
+@media (max-width: 560px) {
+  .card:has(> .card-cover):has(> .ringkasan) {
+    display: grid; grid-template-columns: 112px 1fr; column-gap: 12px;
+    align-items: start; padding: 12px;
+  }
+  .card:has(> .card-cover):has(> .ringkasan) > .card-cover {
+    grid-column: 1; grid-row: 1 / span 3; width: 112px; margin: 0;
+    aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .card:has(> .card-cover):has(> .ringkasan) > :not(.card-cover):not(.ringkasan) { grid-column: 2; }
+  .card:has(> .card-cover):has(> .ringkasan) > .artikel-topik { justify-self: start; margin-bottom: 6px; }
+  .card:has(> .card-cover):has(> .ringkasan) > h2,
+  .card:has(> .card-cover):has(> .ringkasan) > h3 { font-size: 0.95rem; line-height: 1.35; }
+  .card:has(> .card-cover):has(> .ringkasan) > .meta { margin-bottom: 0; }
+  .card:has(> .card-cover):has(> .ringkasan) > .ringkasan {
+    grid-column: 1 / -1; margin: 10px 0 0; -webkit-line-clamp: 2; line-clamp: 2;
+  }
+  .card:has(> .card-cover):has(> .ringkasan) > .doclink { display: none; }
+}
+
 /* A2: tombol kembali ke atas (templates/base.html.j2) */
 .ke-atas {
   position: fixed; right: 16px; bottom: 16px; z-index: 50;
