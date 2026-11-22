@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-21">
+<link rel="stylesheet" href="../../../assets/style.css?v=2026-11-22">
 <link rel="icon" href="../../../assets/img/uper-lambang.png">
 <link rel="alternate" type="application/rss+xml" title="Artikel HESLab" href="https://heslab-uper.com/feed.xml">
 <script type="application/ld+json">{
@@ -679,10 +679,12 @@ data, sesuai <a href="../../../kebijakan-privasi/index.html" target="_blank" rel
         <a href="../../../kebijakan-privasi/index.html">Kebijakan Privasi</a>
       </div>
       <a href="https://portal.heslab-uper.com/" target="_blank" rel="noopener">HESLab Portal</a>
-      <div class="footer-line">Diperbarui 2026-11-21</div>
+      <div class="footer-line">Diperbarui 2026-11-22</div>
     </div>
   </div>
 </footer>
+
+<a href="#" class="ke-atas" aria-label="Kembali ke atas" title="Kembali ke atas" hidden>↑</a>
 
 <script>
 /* Menu lipat di ponsel (pemilik 2026-11-19); tanpa JavaScript menu tetap terbuka. */
@@ -697,6 +699,20 @@ data, sesuai <a href="../../../kebijakan-privasi/index.html" target="_blank" rel
     tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
     tombol.textContent = buka ? '✕' : '☰';
     tombol.setAttribute('aria-label', buka ? 'Tutup menu' : 'Buka menu');
+  });
+})();
+/* Tombol kembali ke atas (pemilik 2026-11-22, A2): muncul setelah halaman
+   digulir lebih dari dua tinggi layar; tanpa JavaScript tidak tampil. */
+(function () {
+  var atas = document.querySelector('.ke-atas');
+  if (!atas) return;
+  var tampil = function () { atas.hidden = window.scrollY < 2 * window.innerHeight; };
+  window.addEventListener('scroll', tampil, { passive: true });
+  tampil();
+  atas.addEventListener('click', function (e) {
+    e.preventDefault();
+    var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: halus ? 'smooth' : 'auto' });
   });
 })();
 </script>

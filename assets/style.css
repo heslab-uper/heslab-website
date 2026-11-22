@@ -541,3 +541,40 @@ a.badge:hover, a.badge:focus-visible { background: var(--river-800); color: #fff
 .artikel-isi blockquote {
   margin: 20px 0; padding-left: 16px; border-left: 3px solid var(--river-200); color: var(--ink-700);
 }
+
+/* ---------------- Tampilan 2026-11-22 (pemilik, paket A) ---------------- */
+/* A1: gambar figure menaut ke berkasnya (markdown_utils); tanda "perbesar" di pojok */
+a.perbesar { position: relative; display: inline-block; max-width: 100%; cursor: zoom-in; }
+a.perbesar img { display: block; }
+a.perbesar::after {
+  content: "⤢"; position: absolute; right: 8px; bottom: 8px;
+  width: 28px; height: 28px; line-height: 28px; text-align: center; font-size: 16px;
+  color: #fff; background: rgba(35, 31, 32, 0.6); border-radius: var(--radius);
+  pointer-events: none;
+}
+a.perbesar:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
+
+/* A2: tombol kembali ke atas (templates/base.html.j2) */
+.ke-atas {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50;
+  width: 44px; height: 44px; line-height: 42px; text-align: center; font-size: 20px;
+  color: #fff; background: var(--river-700); border-radius: 50%;
+  text-decoration: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.ke-atas:hover, .ke-atas:focus-visible { background: var(--river-800); color: #fff; }
+.ke-atas[hidden] { display: none; }
+
+/* A3: baris Bagikan di akhir artikel (build_page_artikel._share_html, assets/artikel.js) */
+.bagikan {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  max-width: 72ch; margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--line);
+}
+.bagikan-label { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); }
+.bagikan-tombol {
+  font-family: var(--font-body); font-size: 0.88rem; cursor: pointer; text-decoration: none;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink-900);
+}
+.bagikan-tombol:hover { border-color: var(--river-700); color: var(--ink-900); }
+.bagikan-tombol:focus-visible { outline: 2px solid var(--river-500); outline-offset: 2px; }
+.bagikan-tombol[hidden] { display: none; }
